@@ -869,7 +869,7 @@
     }
 
     /* Wallet, Deposit, Withdrawal Pages */
-    .wallet-page, .deposit-page, .withdrawal-page, .account-page, .activity-page, .withdrawal-history-page {
+    .wallet-page, .deposit-page, .withdrawal-page, .account-page, .activity-page, .withdrawal-history-page, .deposit-history-page {
       display: none;
       background: linear-gradient(135deg, #00b09b, #96c93d);
       min-height: 100vh;
@@ -877,14 +877,14 @@
       padding-bottom: 80px;
     }
 
-    .wallet-header, .deposit-header, .withdrawal-header, .account-header, .activity-header, .withdrawal-history-header {
+    .wallet-header, .deposit-header, .withdrawal-header, .account-header, .activity-header, .withdrawal-history-header, .deposit-history-header {
       text-align: center;
       margin-top: 50px;
       margin-bottom: 30px;
     }
 
     .wallet-balance-card, .deposit-form-card, .bank-details-card, .withdrawal-amount-card, 
-    .withdrawal-history-card, .profile-card, .account-options, .gift-code-card, .rewards-card {
+    .withdrawal-history-card, .deposit-history-card, .profile-card, .account-options, .gift-code-card, .rewards-card {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 15px;
       padding: 25px;
@@ -1064,7 +1064,7 @@
       cursor: pointer;
     }
 
-    .wallet-history-item, .withdrawal-item {
+    .wallet-history-item, .withdrawal-item, .deposit-item {
       display: flex;
       justify-content: space-between;
       padding: 15px;
@@ -1158,7 +1158,7 @@
     }
 
     /* Withdrawal History Specific Styles */
-    .withdrawal-detail-card {
+    .withdrawal-detail-card, .deposit-detail-card {
       background: white;
       border-radius: 10px;
       padding: 20px;
@@ -1399,6 +1399,17 @@
         <button class="wallet-action-button" onclick="showWithdrawalPage()">Withdraw</button>
       </div>
     </div>
+    <div class="wallet-balance-card">
+      <h3 style="color: #00a86b; margin-bottom: 15px;">Quick Actions</h3>
+      <div class="account-option-item" onclick="showDepositHistoryPage()">
+        <span>📜 Deposit History</span>
+        <span>→</span>
+      </div>
+      <div class="account-option-item" onclick="showWithdrawalHistoryPage()">
+        <span>📜 Withdrawal History</span>
+        <span>→</span>
+      </div>
+    </div>
   </div>
 
   <!-- Deposit Page -->
@@ -1433,6 +1444,21 @@
         <input type="text" class="form-input" id="utrNumber" placeholder="Enter 12-digit UTR number" />
       </div>
       <button class="submit-btn" onclick="submitUTR()">Submit UTR</button>
+    </div>
+  </div>
+
+  <!-- Deposit History Page -->
+  <div class="deposit-history-page" id="depositHistoryPage">
+    <button class="back-button" onclick="goBackToWallet()">← Back</button>
+    <div class="deposit-history-header">
+      <h2 style="color: white; font-size: 2rem;">Deposit History</h2>
+    </div>
+    <div class="deposit-history-card">
+      <div id="depositHistoryContent">
+        <div class="no-history">
+          <p>Loading deposit history...</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1634,26 +1660,24 @@
     let periodStartTime = null;
 
     // ===========================
-    // ⚠️ FIX #1: TIMESTAMP-BASED PERIOD CALCULATION
+    // ⚠️ FIX #1: TIMESTAMP-BASED PERIOD CALCULATION (NO SKIPPING)
     // ===========================
     function generateCurrentPeriod() {
       const now = new Date();
       const year = now.getFullYear();
       const month = String(now.getMonth() + 1).padStart(2, '0');
       const day = String(now.getDate()).padStart(2, '0');
-      const minutesSinceStart = Math.floor((now.getHours() * 60 + now.getMinutes()));
-      const periodNumber = minutesSinceStart + 1;
+      const minutesSinceMidnight = Math.floor((now.getHours() * 60 + now.getMinutes()));
+      const periodNumber = minutesSinceMidnight + 1;
       return `${year}${month}${day}${String(periodNumber).padStart(4, '0')}`;
     }
 
     function getPeriodStartTime(period) {
-      // Extract date and period number from period string
       const year = parseInt(period.substring(0, 4));
       const month = parseInt(period.substring(4, 6)) - 1;
       const day = parseInt(period.substring(6, 8));
       const periodNum = parseInt(period.substring(8, 12));
       
-      // Calculate start time
       const date = new Date(year, month, day);
       date.setHours(0, 0, 0, 0);
       return date.getTime() + ((periodNum - 1) * 60 * 1000);
@@ -1676,7 +1700,6 @@
       const savedUser = localStorage.getItem('glowbet_user');
       if (savedUser) {
         currentUser = JSON.parse(savedUser);
-        // Verify user still exists and check status
         const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
         database.ref('users/' + cleanPhone).once('value').then(snapshot => {
           if (snapshot.exists()) {
@@ -1688,7 +1711,6 @@
             } else if (userData.status === 'suspended') {
               checkSuspensionExpiry(cleanPhone, userData);
             } else {
-              // Update local data
               currentUser = userData;
               localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
               document.getElementById("loginPage").style.display = "none";
@@ -1706,7 +1728,6 @@
 
     function checkSuspensionExpiry(userKey, userData) {
       if (userData.unsuspendAt && Date.now() > userData.unsuspendAt) {
-        // Auto-unsuspend
         database.ref('users/' + userKey + '/status').set('active').then(() => {
           database.ref('users/' + userKey + '/unsuspendAt').remove();
           currentUser.status = 'active';
@@ -1820,16 +1841,13 @@
         const userData = snapshot.val();
         if (userData && userData.password === pass) {
           
-          // ⚠️ CHECK BAN STATUS
           if (userData.status === 'banned') {
             showBannedMessage();
             return;
           }
 
-          // ⚠️ CHECK SUSPEND STATUS WITH EXPIRY
           if (userData.status === 'suspended') {
             if (userData.unsuspendAt && Date.now() > userData.unsuspendAt) {
-              // Auto-unsuspend
               database.ref('users/' + cleanPhone + '/status').set('active').then(() => {
                 database.ref('users/' + cleanPhone + '/unsuspendAt').remove();
                 userData.status = 'active';
@@ -1862,7 +1880,6 @@
       }, 1500);
     }
 
-    // ⚠️ BAN MESSAGE
     function showBannedMessage() {
       const loginForm = document.getElementById("login-form");
       loginForm.innerHTML = `
@@ -1880,7 +1897,6 @@
       `;
     }
 
-    // ⚠️ SUSPEND MESSAGE WITH TIME LEFT
     function showSuspendedMessage(unsuspendAt) {
       const loginForm = document.getElementById("login-form");
       const timeLeft = unsuspendAt - Date.now();
@@ -1950,6 +1966,7 @@
       document.getElementById('depositPage').style.display = 'none';
       document.getElementById('withdrawalPage').style.display = 'none';
       document.getElementById('withdrawalHistoryPage').style.display = 'none';
+      document.getElementById('depositHistoryPage').style.display = 'none';
       document.getElementById('accountPage').style.display = 'none';
       document.getElementById('activityPage').style.display = 'none';
     }
@@ -1994,11 +2011,10 @@
     function initializeWingo() {
       updateWingoBalance();
       listenToFirebaseResults();
-      checkPendingBets();  // ⚠️ NEW: Check for pending bets on load
+      checkPendingBets();
       startCountdown();
     }
 
-    // ⚠️ FIX #2: CHECK PENDING BETS ON LOAD (AUTO-CREDIT WINS)
     function checkPendingBets() {
       if (!currentUser) return;
       
@@ -2010,7 +2026,6 @@
         
         Object.entries(userBets).forEach(([roundId, betData]) => {
           if (betData.status === 'pending') {
-            // Check if result exists
             database.ref('results/' + roundId).once('value').then(resultSnapshot => {
               if (resultSnapshot.exists()) {
                 const result = resultSnapshot.val();
@@ -2056,7 +2071,6 @@
             localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
             updateWingoBalance();
             
-            // Mark bet as processed
             database.ref('user_bets/' + currentUser.userId + '/' + roundId + '/status').set('won');
             
             console.log('✅ Auto-credited win:', winAmount);
@@ -2064,12 +2078,10 @@
           });
         });
       } else {
-        // Mark bet as lost
         database.ref('user_bets/' + currentUser.userId + '/' + roundId + '/status').set('lost');
       }
     }
 
-    // ⚠️ FIX #3: BACKGROUND-WORKING TIMER
     function startCountdown() {
       clearInterval(countdownInterval);
       
@@ -2086,10 +2098,8 @@
       console.log('🎮 [USER] Round:', currentRoundId, '| Time left:', countdown);
       
       countdownInterval = setInterval(() => {
-        // Recalculate from timestamp (background-safe)
         countdown = getTimeLeftInPeriod();
         
-        // Check if period changed
         const newPeriod = generateCurrentPeriod();
         if (newPeriod !== currentRoundId) {
           console.log('🔄 Period changed, restarting...');
@@ -2373,14 +2383,12 @@
         return;
       }
       
-      // Deduct balance
       currentUser.balance -= betAmount;
       
       const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
       database.ref('users/' + cleanPhone + '/balance').set(currentUser.balance);
       localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
       
-      // ⚠️ SAVE BET TO FIREBASE (PERSISTENT)
       const betData = {
         selection: currentBet,
         amount: betAmount,
@@ -2501,6 +2509,93 @@
       });
     }
 
+    // ⚠️ FIX #2: DEPOSIT HISTORY PAGE
+    function showDepositHistoryPage() {
+      if (!currentUser) {
+        showCustomPopup("Error", "Please login first");
+        return;
+      }
+
+      hideAllPages();
+      document.getElementById('depositHistoryPage').style.display = 'block';
+      loadDepositHistory();
+    }
+
+    function loadDepositHistory() {
+      const contentDiv = document.getElementById('depositHistoryContent');
+      contentDiv.innerHTML = '<div class="no-history"><p>Loading deposit history...</p></div>';
+
+      database.ref('deposits').orderByChild('userId').equalTo(currentUser.userId).once('value')
+        .then(snapshot => {
+          contentDiv.innerHTML = '';
+          
+          if (!snapshot.exists()) {
+            contentDiv.innerHTML = '<div class="no-history"><p>🔭 No deposit history found</p></div>';
+            return;
+          }
+
+          const deposits = [];
+          snapshot.forEach(childSnapshot => {
+            deposits.push(childSnapshot.val());
+          });
+
+          deposits.sort((a, b) => b.timestamp - a.timestamp);
+
+          deposits.forEach(deposit => {
+            const card = document.createElement('div');
+            card.className = 'deposit-detail-card';
+            
+            let statusBadgeClass = 'status-pending';
+            let statusText = 'Pending';
+            
+            if (deposit.status === 'approved') {
+              statusBadgeClass = 'status-completed';
+              statusText = 'Approved';
+            } else if (deposit.status === 'rejected') {
+              statusBadgeClass = 'status-pending';
+              statusText = 'Rejected';
+            }
+            
+            card.innerHTML = `
+              <div class="detail-row">
+                <span class="detail-label">Deposit ID:</span>
+                <span class="detail-value">${deposit.depositId}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">User ID:</span>
+                <span class="detail-value">${deposit.userId}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Phone:</span>
+                <span class="detail-value">${deposit.phone}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Amount:</span>
+                <span class="detail-value" style="color: #00a86b; font-weight: bold;">₹${deposit.amount.toFixed(2)}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">UTR:</span>
+                <span class="detail-value">${deposit.utr}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Date & Time:</span>
+                <span class="detail-value">${formatDate(deposit.timestamp)}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="status-badge ${statusBadgeClass}">${statusText}</span>
+              </div>
+            `;
+            
+            contentDiv.appendChild(card);
+          });
+        })
+        .catch(error => {
+          console.error("Error loading deposit history:", error);
+          contentDiv.innerHTML = '<div class="no-history"><p>❌ Failed to load deposit history</p></div>';
+        });
+    }
+
     // ===========================
     // WITHDRAWAL FUNCTIONS
     // ===========================
@@ -2590,9 +2685,6 @@
       document.getElementById('withdrawalAmount').value = '';
     }
 
-    // ===========================
-    // WITHDRAWAL HISTORY FUNCTIONS
-    // ===========================
     function showWithdrawalHistoryPage() {
       if (!currentUser) {
         showCustomPopup("Error", "Please login first");
@@ -2668,15 +2760,63 @@
     }
 
     // ===========================
-    // ACTIVITY FUNCTIONS
+    // ⚠️ FIX #3: GIFT CODE CLAIMING (WORKS WITH ADMIN CODES)
     // ===========================
     function claimGiftCode() {
-      const code = document.getElementById('giftCodeInput').value.trim();
+      const code = document.getElementById('giftCodeInput').value.trim().toUpperCase();
       if (!code) {
         showCustomPopup("Error", "Please enter a gift code");
         return;
       }
-      showCustomPopup("Error", "Invalid gift code!");
+
+      if (!currentUser) {
+        showCustomPopup("Error", "Please login first");
+        return;
+      }
+
+      database.ref('gift_codes/' + code).once('value').then(snapshot => {
+        if (!snapshot.exists()) {
+          showCustomPopup("Error", "Invalid gift code!");
+          return;
+        }
+
+        const giftData = snapshot.val();
+
+        if (giftData.status !== 'active') {
+          showCustomPopup("Error", "This gift code has already been used!");
+          return;
+        }
+
+        if (giftData.usedBy) {
+          showCustomPopup("Error", "This gift code has already been claimed!");
+          return;
+        }
+
+        const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
+        database.ref('users/' + cleanPhone).once('value').then(userSnapshot => {
+          const userData = userSnapshot.val();
+          const newBalance = (userData.balance || 0) + giftData.amount;
+
+          database.ref('users/' + cleanPhone + '/balance').set(newBalance).then(() => {
+            database.ref('gift_codes/' + code).update({
+              status: 'used',
+              usedBy: currentUser.userId,
+              usedAt: Date.now()
+            }).then(() => {
+              currentUser.balance = newBalance;
+              localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
+              updateWingoBalance();
+              updateWalletBalance();
+
+              showCustomPopup("Success", `🎉 Gift code claimed! ₹${giftData.amount} added to your account!`);
+              document.getElementById('giftCodeInput').value = '';
+            });
+          });
+        });
+      }).catch(error => {
+        console.error("Gift code error:", error);
+        showCustomPopup("Error", "Failed to claim gift code. Please try again.");
+      });
     }
 
     // ===========================
@@ -2694,3 +2834,5 @@
   </script>
 </body>
 </html>
+Response
+Created file /home/user/glowbet_game_updated.html (85102 characters)
