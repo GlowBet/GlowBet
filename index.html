@@ -17,10 +17,10 @@
       font-family: 'Poppins', sans-serif; 
     }
     
-    /* Common Green Theme */
+    /* DARK VIOLET THEME - RESTORED */
     body {
-      background: linear-gradient(135deg, #00b09b, #96c93d);
-      color: #333;
+      background: linear-gradient(135deg, #2D1B69, #6B46C1);
+      color: white;
     }
     
     /* Customer Support Button - Bottom Right, MOVED UP */
@@ -28,7 +28,7 @@
       position: fixed;
       bottom: 100px;
       right: 20px;
-      background: linear-gradient(135deg, #00a86b, #00c853);
+      background: linear-gradient(135deg, #8B5CF6, #A78BFA);
       color: white;
       width: 60px;
       height: 60px;
@@ -38,7 +38,7 @@
       justify-content: center;
       font-size: 28px;
       cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0, 168, 107, 0.4);
+      box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
       z-index: 10000;
       transition: all 0.3s;
       animation: pulse 2s infinite;
@@ -46,22 +46,22 @@
     
     .customer-support:hover {
       transform: scale(1.1);
-      box-shadow: 0 12px 30px rgba(0, 168, 107, 0.6);
+      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.6);
     }
     
     @keyframes pulse {
       0%, 100% {
-        box-shadow: 0 8px 20px rgba(0, 168, 107, 0.4);
+        box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
       }
       50% {
-        box-shadow: 0 8px 30px rgba(0, 168, 107, 0.7);
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.7);
       }
     }
     
-    /* Login Page Styles */
+    /* Login Page Styles - DARK VIOLET THEME */
     .login-page {
-      background: linear-gradient(135deg, #00b09b, #96c93d);
-      color: #333; 
+      background: linear-gradient(135deg, #2D1B69, #6B46C1);
+      color: white; 
       display: flex; 
       justify-content: center; 
       align-items: center; 
@@ -71,12 +71,12 @@
     
     .container { 
       width: 380px; 
-      background: rgba(255, 255, 255, 0.95); 
+      background: rgba(45, 27, 105, 0.9); 
       border-radius: 15px; 
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
       padding: 30px; 
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
     
     .logo { 
@@ -85,15 +85,15 @@
     }
     
     .logo h2 { 
-      color: #00a86b; 
+      color: #A78BFA; 
       letter-spacing: 1px; 
       font-size: 28px;
-      text-shadow: 0 2px 5px rgba(0, 168, 107, 0.3);
+      text-shadow: 0 2px 5px rgba(139, 92, 246, 0.3);
     }
     
     h3 { 
       text-align: center; 
-      color: #00a86b; 
+      color: #A78BFA; 
       margin-bottom: 20px; 
       font-size: 22px;
       font-weight: 600;
@@ -103,25 +103,30 @@
       display: block; 
       font-size: 14px; 
       margin: 12px 0 6px; 
-      color: #555; 
+      color: #DDD6FE; 
       font-weight: 500;
     }
     
     input[type="text"], input[type="password"], input[type="tel"], input[type="number"] {
       width: 100%; 
       padding: 12px 15px; 
-      border: 2px solid #e0e0e0;
+      border: 2px solid #4C1D95;
       border-radius: 10px; 
       font-size: 14px; 
       outline: none;
       transition: all 0.3s ease;
-      background: #f8fff8;
+      background: rgba(76, 29, 149, 0.5);
+      color: white;
+    }
+    
+    input::placeholder {
+      color: #A78BFA;
     }
     
     input:focus { 
-      border-color: #00a86b; 
-      box-shadow: 0 0 10px rgba(0, 168, 107, 0.3); 
-      background: #ffffff;
+      border-color: #8B5CF6; 
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.3); 
+      background: rgba(76, 29, 149, 0.7);
       transform: translateY(-2px);
     }
     
@@ -130,17 +135,17 @@
       align-items: center; 
       font-size: 13px; 
       margin-top: 15px; 
-      color: #555;
+      color: #DDD6FE;
     }
     
     .checkbox input { 
       margin-right: 8px; 
-      accent-color: #00a86b;
+      accent-color: #8B5CF6;
     }
     
     .auth-button {
       width: 100%; 
-      background: linear-gradient(135deg, #00a86b, #00c853);
+      background: linear-gradient(135deg, #8B5CF6, #A78BFA);
       color: white; 
       border: none;
       padding: 14px; 
@@ -151,24 +156,24 @@
       transition: all 0.3s ease;
       font-weight: 600;
       letter-spacing: 0.5px;
-      box-shadow: 0 4px 15px rgba(0, 168, 107, 0.4);
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
     }
     
     .auth-button:hover { 
-      background: linear-gradient(135deg, #00915c, #00b347);
+      background: linear-gradient(135deg, #7C3AED, #8B5CF6);
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 168, 107, 0.6);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
     }
     
     .toggle-link {
       text-align: center; 
       margin-top: 20px; 
       font-size: 14px;
-      color: #666;
+      color: #DDD6FE;
     }
     
     .toggle-link span { 
-      color: #00a86b; 
+      color: #A78BFA; 
       cursor: pointer; 
       font-weight: 600;
       text-decoration: underline;
@@ -176,22 +181,22 @@
     }
     
     .toggle-link span:hover {
-      color: #007a4f;
-      text-shadow: 0 2px 5px rgba(0, 168, 107, 0.3);
+      color: #8B5CF6;
+      text-shadow: 0 2px 5px rgba(139, 92, 246, 0.3);
     }
     
     .hidden { display: none; }
 
     /* Ban Message Styles */
     .ban-message {
-      background: #ff4444;
+      background: #DC2626;
       color: white;
       padding: 15px 20px;
       border-radius: 10px;
       margin: 15px 0;
       text-align: center;
       font-weight: 600;
-      box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4);
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
     }
 
     .ban-icon {
@@ -200,27 +205,27 @@
     }
 
     .suspend-message {
-      background: #ff9800;
+      background: #D97706;
       color: white;
       padding: 15px 20px;
       border-radius: 10px;
       margin: 15px 0;
       text-align: center;
       font-weight: 600;
-      box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
     }
     
-    /* Home Page Styles */
+    /* Home Page Styles - DARK VIOLET THEME */
     .home-page {
       display: none;
-      background: linear-gradient(135deg, #00b09b, #96c93d);
-      color: #333;
+      background: linear-gradient(135deg, #2D1B69, #6B46C1);
+      color: white;
       min-height: 100vh;
       padding-bottom: 80px;
     }
 
     .banner {
-      background: linear-gradient(90deg, #00a86b, #00c853, #00a86b);
+      background: linear-gradient(90deg, #8B5CF6, #A78BFA, #8B5CF6);
       padding: 15px 0;
       text-align: center;
       font-size: 2rem;
@@ -240,14 +245,14 @@
     .game-option {
       width: 200px;
       height: 200px;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(45, 27, 105, 0.8);
       border-radius: 50%;
       padding: 20px;
       text-align: center;
       cursor: pointer;
       transition: 0.3s;
       border: 2px solid transparent;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -255,9 +260,9 @@
     }
 
     .game-option:hover {
-      border-color: #00a86b;
+      border-color: #8B5CF6;
       transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
     }
 
     .game-image {
@@ -273,43 +278,43 @@
     }
 
     .lottery-image {
-      background: linear-gradient(45deg, #ff0000, #ff6b00, #ffd700, #00ff00, #0000ff, #8a2be2);
+      background: linear-gradient(45deg, #EF4444, #F59E0B, #10B981, #3B82F6, #8B5CF6);
     }
 
     .wingo-image {
-      background: linear-gradient(135deg, #00a86b, #00c853);
+      background: linear-gradient(135deg, #8B5CF6, #A78BFA);
     }
 
     .game-title {
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 5px;
-      color: #00a86b;
+      color: #A78BFA;
     }
 
-    /* Bottom Navigation */
+    /* Bottom Navigation - DARK VIOLET */
     .bottom-nav {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(45, 27, 105, 0.95);
       display: flex;
       justify-content: space-around;
       padding: 15px 0;
-      border-top: 2px solid #00a86b;
-      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+      border-top: 2px solid #8B5CF6;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
     }
 
     .nav-item {
       text-align: center;
       cursor: pointer;
       transition: 0.3s;
-      color: #666;
+      color: #DDD6FE;
     }
 
     .nav-item.active {
-      color: #00a86b;
+      color: #A78BFA;
     }
 
     .nav-icon {
@@ -322,7 +327,7 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -332,15 +337,15 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      box-shadow: 0 4px 15px rgba(0, 168, 107, 0.3);
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
       z-index: 100;
     }
 
-    /* Wingo Game Page */
+    /* Wingo Game Page - DARK VIOLET THEME */
     .wingo-page {
       display: none;
-      background: linear-gradient(135deg, #00b09b, #96c93d);
-      color: #333;
+      background: linear-gradient(135deg, #2D1B69, #6B46C1);
+      color: white;
       min-height: 100vh;
       padding: 20px;
       padding-bottom: 80px;
@@ -355,27 +360,28 @@
     .wingo-title {
       font-size: 2rem;
       font-weight: bold;
-      color: #00a86b;
+      color: #A78BFA;
       margin-bottom: 10px;
     }
 
     .balance-section {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(45, 27, 105, 0.8);
       padding: 15px;
       border-radius: 10px;
       text-align: center;
       margin-bottom: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .balance-amount {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #00a86b;
+      color: #A78BFA;
     }
 
     .refresh-btn {
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
       border: none;
       padding: 5px 10px;
@@ -391,25 +397,27 @@
     }
 
     .wallet-btn {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(45, 27, 105, 0.8);
       padding: 10px 20px;
       border-radius: 10px;
       text-align: center;
       cursor: pointer;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       flex: 1;
       margin: 0 5px;
       font-weight: 600;
-      color: #00a86b;
+      color: #A78BFA;
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .timer-section {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(45, 27, 105, 0.8);
       padding: 15px;
       border-radius: 10px;
       text-align: center;
       margin-bottom: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .round-info {
@@ -421,38 +429,23 @@
     .timer {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #ff6b00;
+      color: #F59E0B;
     }
 
     .timer.locked {
-      color: #ff4444;
+      color: #EF4444;
     }
 
+    /* Betting Area */
     .betting-area {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(45, 27, 105, 0.8);
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       position: relative;
-    }
-
-    .betting-area.locked::after {
-      content: '🔒 Betting Locked';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(255, 68, 68, 0.9);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      border-radius: 10px;
-      z-index: 10;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      transition: all 0.1s ease;
     }
 
     .color-options {
@@ -471,6 +464,7 @@
       flex: 1;
       margin: 0 5px;
       transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .color-option:hover {
@@ -483,9 +477,9 @@
       pointer-events: none;
     }
 
-    .red { background: #ff4444; }
-    .violet { background: #8a2be2; }
-    .green { background: #00a86b; }
+    .red { background: linear-gradient(135deg, #EF4444, #DC2626); }
+    .violet { background: linear-gradient(135deg, #8B5CF6, #7C3AED); }
+    .green { background: linear-gradient(135deg, #10B981, #059669); }
 
     .number-grid {
       display: grid;
@@ -495,7 +489,7 @@
     }
 
     .number-cell {
-      background: #f0f0f0;
+      background: rgba(76, 29, 149, 0.6);
       padding: 15px;
       border-radius: 10px;
       text-align: center;
@@ -503,10 +497,12 @@
       font-weight: bold;
       transition: 0.3s;
       font-size: 1.2rem;
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .number-cell:hover {
       transform: scale(1.05);
+      background: rgba(139, 92, 246, 0.3);
     }
 
     .number-cell.disabled {
@@ -516,19 +512,19 @@
     }
 
     .number-0 { 
-      background: linear-gradient(45deg, #ff4444, #8a2be2);
+      background: linear-gradient(45deg, #EF4444, #8B5CF6);
       color: white;
     }
     .number-1, .number-3, .number-7, .number-9 { 
-      background: #00a86b;
+      background: linear-gradient(135deg, #10B981, #059669);
       color: white;
     }
     .number-2, .number-4, .number-6, .number-8 { 
-      background: #ff4444;
+      background: linear-gradient(135deg, #EF4444, #DC2626);
       color: white;
     }
     .number-5 { 
-      background: linear-gradient(45deg, #00a86b, #8a2be2);
+      background: linear-gradient(45deg, #10B981, #8B5CF6);
       color: white;
     }
 
@@ -539,7 +535,7 @@
     }
 
     .size-option {
-      background: #f0f0f0;
+      background: rgba(76, 29, 149, 0.6);
       padding: 15px 30px;
       border-radius: 10px;
       text-align: center;
@@ -550,14 +546,15 @@
       margin: 0 5px;
       color: white;
       font-size: 1.1rem;
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .size-option.small-btn {
-      background: #1E90FF;
+      background: linear-gradient(135deg, #3B82F6, #2563EB);
     }
 
     .size-option.big-btn {
-      background: #FFD700;
+      background: linear-gradient(135deg, #F59E0B, #D97706);
     }
 
     .size-option:hover {
@@ -573,9 +570,10 @@
 
     .history-tabs {
       display: flex;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(45, 27, 105, 0.8);
       border-radius: 10px 10px 0 0;
       overflow: hidden;
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .history-tab {
@@ -583,21 +581,23 @@
       padding: 15px;
       text-align: center;
       cursor: pointer;
-      background: #e0e0e0;
+      background: rgba(76, 29, 149, 0.6);
       transition: 0.3s;
+      color: #DDD6FE;
     }
 
     .history-tab.active {
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
     }
 
     .history-content {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(45, 27, 105, 0.8);
       border-radius: 0 0 10px 10px;
       padding: 15px;
       max-height: 500px;
       overflow-y: auto;
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .history-table {
@@ -609,11 +609,12 @@
     .history-table td {
       padding: 12px 8px;
       text-align: center;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+      color: white;
     }
 
     .history-table th {
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
       position: sticky;
       top: 0;
@@ -630,19 +631,19 @@
     }
 
     .result-number-0 { 
-      background: linear-gradient(45deg, #ff4444, #8a2be2);
+      background: linear-gradient(45deg, #EF4444, #8B5CF6);
       color: white;
     }
     .result-number-1, .result-number-3, .result-number-7, .result-number-9 { 
-      background: #00a86b;
+      background: linear-gradient(135deg, #10B981, #059669);
       color: white;
     }
     .result-number-2, .result-number-4, .result-number-6, .result-number-8 { 
-      background: #ff4444;
+      background: linear-gradient(135deg, #EF4444, #DC2626);
       color: white;
     }
     .result-number-5 { 
-      background: linear-gradient(45deg, #00a86b, #8a2be2);
+      background: linear-gradient(45deg, #10B981, #8B5CF6);
       color: white;
     }
 
@@ -660,7 +661,7 @@
     }
 
     .page-btn {
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -674,19 +675,19 @@
     }
 
     .page-btn:hover {
-      background: #007a4f;
+      background: #7C3AED;
       transform: scale(1.05);
     }
 
     .page-btn:disabled {
-      background: #ccc;
+      background: #4C1D95;
       cursor: not-allowed;
       transform: scale(1);
     }
 
     .page-info {
       font-weight: bold;
-      color: #00a86b;
+      color: #A78BFA;
       font-size: 14px;
     }
 
@@ -705,13 +706,15 @@
     }
 
     .bet-popup-content {
-      background: white;
+      background: rgba(45, 27, 105, 0.95);
       padding: 30px;
       border-radius: 15px;
       text-align: center;
       max-width: 400px;
       width: 90%;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      color: white;
     }
 
     .bet-amount {
@@ -723,7 +726,7 @@
     }
 
     .amount-btn {
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -735,17 +738,17 @@
     .amount-display {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #00a86b;
+      color: #A78BFA;
       min-width: 100px;
       padding: 10px;
-      border: 2px solid #00a86b;
+      border: 2px solid #8B5CF6;
       border-radius: 8px;
       cursor: pointer;
-      background: #f0f0f0;
+      background: rgba(76, 29, 149, 0.5);
     }
 
     .amount-display:hover {
-      background: #e0e0e0;
+      background: rgba(76, 29, 149, 0.7);
     }
 
     .multiplier-options {
@@ -757,16 +760,17 @@
     }
 
     .multiplier-btn {
-      background: #e0e0e0;
+      background: rgba(76, 29, 149, 0.6);
       border: none;
       padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
       transition: 0.3s;
+      color: white;
     }
 
     .multiplier-btn.active {
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
     }
 
@@ -786,12 +790,12 @@
     }
 
     .cancel-btn {
-      background: #ff4444;
+      background: #EF4444;
       color: white;
     }
 
     .place-bet-btn {
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
     }
 
@@ -810,13 +814,15 @@
     }
 
     .result-popup-content {
-      background: white;
+      background: rgba(45, 27, 105, 0.95);
       padding: 30px;
       border-radius: 15px;
       text-align: center;
       max-width: 400px;
       width: 90%;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      color: white;
     }
 
     .result-icon {
@@ -824,8 +830,8 @@
       margin-bottom: 15px;
     }
 
-    .win { color: #00a86b; }
-    .lose { color: #ff4444; }
+    .win { color: #10B981; }
+    .lose { color: #EF4444; }
 
     /* Custom Success Popup */
     .custom-popup {
@@ -842,23 +848,25 @@
     }
 
     .custom-popup-content {
-      background: white;
+      background: rgba(45, 27, 105, 0.95);
       padding: 30px;
       border-radius: 15px;
       text-align: center;
       max-width: 300px;
       width: 90%;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      color: white;
     }
 
     .success-icon {
       font-size: 4rem;
-      color: #00a86b;
+      color: #10B981;
       margin-bottom: 15px;
     }
 
     .popup-btn {
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
       border: none;
       padding: 12px 30px;
@@ -868,13 +876,14 @@
       margin-top: 15px;
     }
 
-    /* Wallet, Deposit, Withdrawal Pages */
+    /* Wallet, Deposit, Withdrawal Pages - DARK VIOLET THEME */
     .wallet-page, .deposit-page, .withdrawal-page, .account-page, .activity-page, .withdrawal-history-page, .deposit-history-page {
       display: none;
-      background: linear-gradient(135deg, #00b09b, #96c93d);
+      background: linear-gradient(135deg, #2D1B69, #6B46C1);
       min-height: 100vh;
       padding: 20px;
       padding-bottom: 80px;
+      color: white;
     }
 
     .wallet-header, .deposit-header, .withdrawal-header, .account-header, .activity-header, .withdrawal-history-header, .deposit-history-header {
@@ -885,22 +894,23 @@
 
     .wallet-balance-card, .deposit-form-card, .bank-details-card, .withdrawal-amount-card, 
     .withdrawal-history-card, .deposit-history-card, .profile-card, .account-options, .gift-code-card, .rewards-card {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(45, 27, 105, 0.8);
       border-radius: 15px;
       padding: 25px;
       margin-bottom: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .wallet-balance-value {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #00a86b;
+      color: #A78BFA;
       margin-bottom: 20px;
     }
 
     .wallet-action-button, .submit-btn {
-      background: #00a86b;
+      background: linear-gradient(135deg, #8B5CF6, #A78BFA);
       color: white;
       border: none;
       padding: 15px;
@@ -910,6 +920,12 @@
       cursor: pointer;
       transition: 0.3s;
       width: 100%;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    }
+
+    .wallet-action-button:hover, .submit-btn:hover {
+      background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+      transform: translateY(-2px);
     }
 
     .wallet-action-buttons {
@@ -929,44 +945,52 @@
       display: block;
       font-size: 14px;
       font-weight: 600;
-      color: #555;
+      color: #DDD6FE;
       margin-bottom: 8px;
     }
 
     .form-input {
       width: 100%;
       padding: 12px 15px;
-      border: 2px solid #e0e0e0;
+      border: 2px solid #4C1D95;
       border-radius: 10px;
       font-size: 14px;
       outline: none;
       transition: all 0.3s ease;
+      background: rgba(76, 29, 149, 0.5);
+      color: white;
+    }
+
+    .form-input::placeholder {
+      color: #A78BFA;
     }
 
     .form-input:focus {
-      border-color: #00a86b;
-      box-shadow: 0 0 10px rgba(0, 168, 107, 0.3);
+      border-color: #8B5CF6;
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+      background: rgba(76, 29, 149, 0.7);
     }
 
     .qr-code-section {
       text-align: center;
       margin: 30px 0;
       padding: 20px;
-      background: white;
+      background: rgba(45, 27, 105, 0.6);
       border-radius: 10px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .qr-code-image {
       width: 250px;
       height: 250px;
       margin: 20px auto;
-      border: 3px solid #00a86b;
+      border: 3px solid #8B5CF6;
       border-radius: 10px;
     }
 
     .guidelines-section {
-      background: #fff3cd;
-      border: 2px solid #ffc107;
+      background: rgba(217, 119, 6, 0.2);
+      border: 2px solid #D97706;
       border-radius: 10px;
       padding: 15px;
       margin-top: 20px;
@@ -975,11 +999,12 @@
     .guidelines-list {
       list-style: none;
       padding-left: 0;
+      color: #FBBF24;
     }
 
     .guidelines-list li:before {
       content: "✓ ";
-      color: #00a86b;
+      color: #10B981;
       font-weight: bold;
       margin-right: 5px;
     }
@@ -987,7 +1012,7 @@
     .profile-avatar {
       width: 100px;
       height: 100px;
-      background: linear-gradient(135deg, #00a86b, #00c853);
+      background: linear-gradient(135deg, #8B5CF6, #A78BFA);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -999,7 +1024,7 @@
 
     .logout-btn {
       width: 100%;
-      background: #ff4444;
+      background: #EF4444;
       color: white;
       border: none;
       padding: 15px;
@@ -1011,8 +1036,8 @@
     }
 
     .saved-bank-info {
-      background: #e8f5e9;
-      border: 2px solid #00a86b;
+      background: rgba(16, 185, 129, 0.2);
+      border: 2px solid #10B981;
       border-radius: 10px;
       padding: 15px;
       margin-bottom: 20px;
@@ -1022,7 +1047,7 @@
       display: flex;
       justify-content: space-between;
       padding: 8px 0;
-      border-bottom: 1px solid #c8e6c9;
+      border-bottom: 1px solid rgba(16, 185, 129, 0.3);
     }
 
     .gift-code-input-group {
@@ -1036,7 +1061,7 @@
     }
 
     .claim-btn {
-      background: #00a86b;
+      background: #8B5CF6;
       color: white;
       border: none;
       padding: 12px 25px;
@@ -1050,7 +1075,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px;
-      background: #f5f5f5;
+      background: rgba(76, 29, 149, 0.5);
       border-radius: 10px;
       margin-bottom: 10px;
     }
@@ -1060,15 +1085,20 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .account-option-item:hover {
+      background: rgba(139, 92, 246, 0.2);
     }
 
     .wallet-history-item, .withdrawal-item, .deposit-item {
       display: flex;
       justify-content: space-between;
       padding: 15px;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .status-badge {
@@ -1079,22 +1109,22 @@
     }
 
     .status-pending {
-      background: #fff3cd;
-      color: #856404;
+      background: rgba(217, 119, 6, 0.3);
+      color: #FBBF24;
     }
 
     .status-completed {
-      background: #d1e7dd;
-      color: #0f5132;
+      background: rgba(16, 185, 129, 0.3);
+      color: #10B981;
     }
 
     .user-id-display {
-      background: #e8f5e9;
+      background: rgba(139, 92, 246, 0.2);
       padding: 10px;
       border-radius: 8px;
       margin-top: 10px;
       font-size: 14px;
-      color: #333;
+      color: #DDD6FE;
     }
 
     /* Custom Amount Modal */
@@ -1112,13 +1142,15 @@
     }
 
     .custom-amount-content {
-      background: white;
+      background: rgba(45, 27, 105, 0.95);
       padding: 30px;
       border-radius: 15px;
       text-align: center;
       max-width: 350px;
       width: 90%;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      color: white;
     }
 
     .custom-amount-input {
@@ -1126,10 +1158,12 @@
       padding: 15px;
       font-size: 1.5rem;
       text-align: center;
-      border: 2px solid #00a86b;
+      border: 2px solid #8B5CF6;
       border-radius: 10px;
       margin: 20px 0;
       outline: none;
+      background: rgba(76, 29, 149, 0.5);
+      color: white;
     }
 
     .custom-amount-actions {
@@ -1153,25 +1187,25 @@
       justify-content: space-between;
       margin: 10px 0;
       padding: 10px;
-      background: #f0f0f0;
+      background: rgba(76, 29, 149, 0.5);
       border-radius: 8px;
     }
 
     /* Withdrawal History Specific Styles */
     .withdrawal-detail-card, .deposit-detail-card {
-      background: white;
+      background: rgba(45, 27, 105, 0.8);
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      border-left: 4px solid #00a86b;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border-left: 4px solid #8B5CF6;
     }
 
     .detail-row {
       display: flex;
       justify-content: space-between;
       padding: 10px 0;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .detail-row:last-child {
@@ -1180,22 +1214,22 @@
 
     .detail-label {
       font-weight: 600;
-      color: #666;
+      color: #DDD6FE;
     }
 
     .detail-value {
-      color: #333;
+      color: white;
       font-weight: 500;
     }
 
     .no-history {
       text-align: center;
       padding: 40px 20px;
-      color: #666;
+      color: #A78BFA;
     }
 
     .history-btn {
-      background: #ff6b00;
+      background: #F59E0B;
       color: white;
       border: none;
       padding: 12px 20px;
@@ -1204,6 +1238,38 @@
       font-weight: 600;
       margin-top: 15px;
       width: 100%;
+    }
+
+    /* Refresh Button in Wallet */
+    .refresh-btn {
+      background: #8B5CF6;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .refresh-btn:hover {
+      background: #7C3AED;
+    }
+
+    /* Delete Button for History */
+    .delete-btn {
+      background: #EF4444;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    .delete-btn:hover {
+      background: #DC2626;
     }
   </style>
 </head>
@@ -1218,7 +1284,7 @@
   <div class="login-page" id="loginPage">
     <div class="container">
       <div class="logo">
-        <h2>🌟 GlowBet</h2>
+        <h2>🌐 GlowBet</h2>
       </div>
 
       <!-- LOGIN FORM -->
@@ -1257,7 +1323,7 @@
         <input type="text" placeholder="Enter invite code" id="reg-invite" />
 
         <div class="checkbox">
-          <input type="checkbox" id="agree"> <label for="agree">I have read and agree <span style="color:#00a86b; font-weight:600;">[Privacy Agreement]</span></label>
+          <input type="checkbox" id="agree"> <label for="agree">I have read and agree <span style="color:#A78BFA; font-weight:600;">[Privacy Agreement]</span></label>
         </div>
 
         <button class="auth-button" onclick="register()">Create Account</button>
@@ -1286,11 +1352,11 @@
     </div>
     <div class="bottom-nav">
       <div class="nav-item active" onclick="showHome()">
-        <div class="nav-icon">🏠</div>
+        <div class="nav-icon">🏠 </div>
         <div>HOME</div>
       </div>
       <div class="nav-item" onclick="showActivity()">
-        <div class="nav-icon">🎁</div>
+        <div class="nav-icon">🚀</div>
         <div>ACTIVITY</div>
       </div>
       <div class="nav-item" onclick="showWallet()">
@@ -1345,8 +1411,8 @@
         <div class="number-cell number-9" onclick="selectBet(9)">9</div>
       </div>
       <div class="size-options">
-        <div class="size-option small-btn" onclick="selectBet('small')">💙 Small</div>
-        <div class="size-option big-btn" onclick="selectBet('big')">⭐ Big</div>
+        <div class="size-option small-btn" onclick="selectBet('small')">💎 Small</div>
+        <div class="size-option big-btn" onclick="selectBet('big')">🟢 Big</div>
       </div>
     </div>
     <div class="history-section">
@@ -1394,13 +1460,14 @@
     <div class="wallet-balance-card">
       <div class="wallet-balance-label">Total Balance</div>
       <div class="wallet-balance-value" id="walletBalance">₹0.00</div>
+      <button class="refresh-btn" onclick="refreshWalletBalance()" style="margin: 10px auto; display: block;">🔄 Refresh Balance</button>
       <div class="wallet-action-buttons">
         <button class="wallet-action-button" onclick="showDepositPage()">Deposit</button>
         <button class="wallet-action-button" onclick="showWithdrawalPage()">Withdraw</button>
       </div>
     </div>
     <div class="wallet-balance-card">
-      <h3 style="color: #00a86b; margin-bottom: 15px;">Quick Actions</h3>
+      <h3 style="color: #A78BFA; margin-bottom: 15px;">Quick Actions</h3>
       <div class="account-option-item" onclick="showDepositHistoryPage()">
         <span>📜 Deposit History</span>
         <span>→</span>
@@ -1427,9 +1494,9 @@
     </div>
     <div class="deposit-form-card" id="paymentSection" style="display: none;">
       <div class="qr-code-section">
-        <h3 style="color: #00a86b;">Scan QR Code to Pay</h3>
+        <h3 style="color: #A78BFA;">Scan QR Code to Pay</h3>
         <img src="https://page.gensparksite.com/v1/base64_upload/078530ab3aa732ed608eeba4b8bd7b89" alt="Payment QR Code" class="qr-code-image" />
-        <p style="margin-top: 10px; color: #666;">Amount: <strong id="displayAmount">₹0</strong></p>
+        <p style="margin-top: 10px; color: #DDD6FE;">Amount: <strong id="displayAmount">₹0</strong></p>
       </div>
       <div class="guidelines-section">
         <div class="guidelines-title">Important Guidelines</div>
@@ -1469,7 +1536,7 @@
       <h2 style="color: white; font-size: 2rem;">Withdraw Money</h2>
     </div>
     <div class="bank-details-card">
-      <h3 style="color: #00a86b; margin-bottom: 20px;">Bank Details</h3>
+      <h3 style="color: #A78BFA; margin-bottom: 20px;">Bank Details</h3>
       <div id="savedBankDetails" style="display: none;">
         <div class="saved-bank-info">
           <div class="bank-info-item">
@@ -1477,7 +1544,7 @@
             <strong id="savedAccNumber">****</strong>
           </div>
         </div>
-        <button class="submit-btn" onclick="editBankDetails()" style="background: #ff6b00;">Edit</button>
+        <button class="submit-btn" onclick="editBankDetails()" style="background: #F59E0B;">Edit</button>
       </div>
       <div id="bankDetailsForm">
         <div class="form-group">
@@ -1492,7 +1559,7 @@
       </div>
     </div>
     <div class="withdrawal-amount-card">
-      <h3 style="color: #00a86b; margin-bottom: 15px;">Withdrawal Amount</h3>
+      <h3 style="color: #A78BFA; margin-bottom: 15px;">Withdrawal Amount</h3>
       <div class="form-group">
         <label class="form-label">Enter Withdrawal Amount</label>
         <input type="number" class="form-input" id="withdrawalAmount" placeholder="Minimum ₹100" min="100" />
@@ -1557,13 +1624,13 @@
       </div>
     </div>
     <div class="rewards-card">
-      <h3 style="color: #00a86b; margin-bottom: 20px;">Available Rewards</h3>
+      <h3 style="color: #A78BFA; margin-bottom: 20px;">Available Rewards</h3>
       <div class="reward-item">
         <div>🎁</div>
         <div style="flex: 1; margin-left: 15px;">
           <div style="font-weight: 600;">Daily Login Bonus</div>
         </div>
-        <div style="color: #00a86b; font-weight: bold;">Coming Soon</div>
+        <div style="color: #A78BFA; font-weight: bold;">Coming Soon</div>
       </div>
     </div>
   </div>
@@ -1572,7 +1639,7 @@
   <div class="bet-popup" id="betPopup">
     <div class="bet-popup-content">
       <h3>Place Your Bet</h3>
-      <div id="betSelection" style="font-size: 1.2rem; margin: 10px 0; font-weight: bold; color: #00a86b;">Selected: Red</div>
+      <div id="betSelection" style="font-size: 1.2rem; margin: 10px 0; font-weight: bold; color: #A78BFA;">Selected: Red</div>
       <div class="bet-amount">
         <button class="amount-btn" onclick="changeAmount(-10)">-</button>
         <div class="amount-display" id="betAmount" onclick="openCustomAmount()">100</div>
@@ -1580,11 +1647,11 @@
       </div>
       <div class="bet-info-row">
         <span>Multiplier:</span>
-        <span id="multiplierDisplay" style="font-weight: bold; color: #00a86b;">1.96x</span>
+        <span id="multiplierDisplay" style="font-weight: bold; color: #A78BFA;">1.96x</span>
       </div>
       <div class="bet-info-row">
         <span>Potential Win:</span>
-        <span id="potentialWin" style="color: #00a86b; font-weight: bold;">₹196</span>
+        <span id="potentialWin" style="color: #A78BFA; font-weight: bold;">₹196</span>
       </div>
       <div class="bet-actions">
         <button class="bet-action-btn cancel-btn" onclick="closeBetPopup()">Cancel</button>
@@ -1596,7 +1663,7 @@
   <!-- Custom Amount Modal -->
   <div class="custom-amount-modal" id="customAmountModal">
     <div class="custom-amount-content">
-      <h3 style="color: #00a86b; margin-bottom: 10px;">Enter Custom Amount</h3>
+      <h3 style="color: #A78BFA; margin-bottom: 10px;">Enter Custom Amount</h3>
       <input type="number" class="custom-amount-input" id="customAmountInput" placeholder="Enter amount" min="10" />
       <div class="custom-amount-actions">
         <button class="custom-amount-btn cancel-btn" onclick="closeCustomAmount()">Cancel</button>
@@ -1660,7 +1727,7 @@
     let periodStartTime = null;
 
     // ===========================
-    // ⚠️ FIX #1: TIMESTAMP-BASED PERIOD CALCULATION (NO SKIPPING)
+    // ✅ FIX #1: TIMESTAMP-BASED PERIOD CALCULATION (NO SKIPPING)
     // ===========================
     function generateCurrentPeriod() {
       const now = new Date();
@@ -1715,6 +1782,8 @@
               localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
               document.getElementById("loginPage").style.display = "none";
               document.getElementById("homePage").style.display = "block";
+              // ✅ FIX #2: CHECK FOR PENDING BETS ON LOGIN
+              checkPendingBets();
             }
           } else {
             currentUser = null;
@@ -1735,6 +1804,8 @@
           localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
           document.getElementById("loginPage").style.display = "none";
           document.getElementById("homePage").style.display = "block";
+          // ✅ FIX #2: CHECK FOR PENDING BETS ON LOGIN
+          checkPendingBets();
         });
       } else {
         showSuspendedMessage(userData.unsuspendAt);
@@ -1877,6 +1948,8 @@
       setTimeout(() => {
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("homePage").style.display = "block";
+        // ✅ FIX #2: CHECK FOR PENDING BETS ON LOGIN
+        checkPendingBets();
       }, 1500);
     }
 
@@ -1903,7 +1976,7 @@
       const hoursLeft = Math.ceil(timeLeft / (1000 * 60 * 60));
       
       loginForm.innerHTML = `
-        <div class="ban-icon">⏸️</div>
+        <div class="ban-icon">⏳</div>
         <div class="suspend-message">
           <strong>YOUR ACCOUNT IS SUSPENDED</strong><br>
           Time remaining: ${hoursLeft} hours<br>
@@ -2015,6 +2088,7 @@
       startCountdown();
     }
 
+    // ✅ FIX #2: IMPROVED PENDING BET CHECKING - WORKS OFFLINE/ONLINE
     function checkPendingBets() {
       if (!currentUser) return;
       
@@ -2029,7 +2103,7 @@
             database.ref('results/' + roundId).once('value').then(resultSnapshot => {
               if (resultSnapshot.exists()) {
                 const result = resultSnapshot.val();
-                console.log('📊 Found result for pending bet:', roundId);
+                console.log('📨 Found result for pending bet:', roundId);
                 processPendingBet(betData, result, roundId);
               }
             });
@@ -2038,6 +2112,7 @@
       });
     }
 
+    // ✅ FIX #3: IMPROVED BET PROCESSING - AUTO CREDIT WINS
     function processPendingBet(bet, result, roundId) {
       let won = false;
       let multiplier = 1.96;
@@ -2070,6 +2145,7 @@
             currentUser.balance = newBalance;
             localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
             updateWingoBalance();
+            updateWalletBalance();
             
             database.ref('user_bets/' + currentUser.userId + '/' + roundId + '/status').set('won');
             
@@ -2082,6 +2158,7 @@
       }
     }
 
+    // ✅ FIX #4: UPDATED COUNTDOWN FUNCTION - NO VISUAL COUNTDOWN, JUST DISABLED BUTTONS
     function startCountdown() {
       clearInterval(countdownInterval);
       
@@ -2095,7 +2172,7 @@
       updateRoundId();
       updateTimer();
       
-      console.log('🎮 [USER] Round:', currentRoundId, '| Time left:', countdown);
+      console.log('🎯 [USER] Round:', currentRoundId, '| Time left:', countdown);
       
       countdownInterval = setInterval(() => {
         countdown = getTimeLeftInPeriod();
@@ -2104,28 +2181,58 @@
         if (newPeriod !== currentRoundId) {
           console.log('🔄 Period changed, restarting...');
           clearInterval(countdownInterval);
+          
+          // ✅ FIX: Disable betting immediately when period changes
+          lockBetting();
           waitForResult(currentRoundId);
           return;
         }
         
         updateTimer();
         
+        // ✅ FIX: Disable betting in last 5 seconds (no visual countdown)
         if (countdown <= 5 && !isBettingLocked) {
           lockBetting();
         }
         
         if (countdown <= 0) {
           clearInterval(countdownInterval);
+          lockBetting();
           waitForResult(currentRoundId);
         }
       }, 1000);
     }
 
+    // ✅ FIX #5: IMPROVED BETTING LOCK FUNCTION
+    function lockBetting() {
+      isBettingLocked = true;
+      const timerDisplay = document.getElementById('countdownTimer');
+      
+      timerDisplay.classList.add('locked');
+      
+      document.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => {
+        el.classList.add('disabled');
+      });
+    }
+
+    // ✅ FIX #6: IMPROVED BETTING UNLOCK FUNCTION  
+    function unlockBetting() {
+      isBettingLocked = false;
+      const timerDisplay = document.getElementById('countdownTimer');
+      
+      timerDisplay.classList.remove('locked');
+      
+      document.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => {
+        el.classList.remove('disabled');
+      });
+    }
+
+    // ✅ FIX #7: IMPROVED RESULT WAITING - NO DELAYS
     function waitForResult(roundId) {
       console.log('⏳ Waiting for result:', roundId);
       
       let attempts = 0;
-      const maxAttempts = 10;
+      const maxAttempts = 3; // Reduced from 10 to 3 for faster results
       
       const checkResult = setInterval(() => {
         attempts++;
@@ -2138,16 +2245,47 @@
             
             checkUserBetsForRound(roundId, result);
             
+            // ✅ FIX: Immediately unlock betting after result
+            unlockBetting();
+            
             setTimeout(() => {
               startCountdown();
-            }, 3000);
+            }, 1000); // Reduced from 3000 to 1000 for faster next round
           } else if (attempts >= maxAttempts) {
             clearInterval(checkResult);
-            console.log('⚠️ No result after 10 attempts, moving on');
-            startCountdown();
+            console.log('❌ No result after 3 attempts, generating random result');
+            generateRandomResult(roundId);
           }
         });
-      }, 1000);
+      }, 500); // Reduced from 1000 to 500 for faster checking
+    }
+
+    // ✅ FIX #8: AUTO RESULT GENERATION IF ADMIN DOESN'T PROVIDE
+    function generateRandomResult(roundId) {
+      const randomNumber = Math.floor(Math.random() * 10);
+      const colors = getColorForNumber(randomNumber);
+      const size = randomNumber >= 5 ? 'big' : 'small';
+      
+      const result = {
+        number: randomNumber,
+        colors: colors,
+        size: size,
+        period: roundId,
+        timestamp: Date.now(),
+        source: 'auto'
+      };
+      
+      console.log('🎲 Auto-generated result:', result);
+      
+      // Save to Firebase
+      database.ref('results/' + roundId).set(result).then(() => {
+        checkUserBetsForRound(roundId, result);
+        // ✅ FIX: Immediately unlock betting after result
+        unlockBetting();
+        setTimeout(() => {
+          startCountdown();
+        }, 1000);
+      });
     }
 
     function checkUserBetsForRound(roundId, result) {
@@ -2160,32 +2298,6 @@
             processPendingBet(betData, result, roundId);
           }
         }
-      });
-    }
-
-    function lockBetting() {
-      isBettingLocked = true;
-      const bettingArea = document.getElementById('bettingArea');
-      const timerDisplay = document.getElementById('countdownTimer');
-      
-      bettingArea.classList.add('locked');
-      timerDisplay.classList.add('locked');
-      
-      document.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => {
-        el.classList.add('disabled');
-      });
-    }
-
-    function unlockBetting() {
-      isBettingLocked = false;
-      const bettingArea = document.getElementById('bettingArea');
-      const timerDisplay = document.getElementById('countdownTimer');
-      
-      bettingArea.classList.remove('locked');
-      timerDisplay.classList.remove('locked');
-      
-      document.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => {
-        el.classList.remove('disabled');
       });
     }
 
@@ -2387,6 +2499,7 @@
       
       const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
       database.ref('users/' + cleanPhone + '/balance').set(currentUser.balance);
+      
       localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
       
       const betData = {
@@ -2407,6 +2520,7 @@
       showCustomPopup("Success", `Bet placed! ₹${betAmount} on ${currentBet}`);
       closeBetPopup();
       updateWingoBalance();
+      updateWalletBalance();
       
       betAmount = 100;
       document.getElementById('betAmount').textContent = betAmount;
@@ -2440,6 +2554,22 @@
           localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
           updateWingoBalance();
           showCustomPopup("Success", "Balance refreshed!");
+        }
+      });
+    }
+
+    // ✅ FIX #9: NEW WALLET REFRESH FUNCTION
+    function refreshWalletBalance() {
+      if (!currentUser) return;
+      
+      const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
+      database.ref('users/' + cleanPhone + '/balance').once('value').then(snapshot => {
+        const balance = snapshot.val();
+        if (balance !== null) {
+          currentUser.balance = balance;
+          localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
+          updateWalletBalance();
+          showCustomPopup("Success", "Wallet balance refreshed!");
         }
       });
     }
@@ -2509,7 +2639,7 @@
       });
     }
 
-    // ⚠️ FIX #2: DEPOSIT HISTORY PAGE
+    // ✅ FIX #10: DEPOSIT HISTORY PAGE
     function showDepositHistoryPage() {
       if (!currentUser) {
         showCustomPopup("Error", "Please login first");
@@ -2530,7 +2660,7 @@
           contentDiv.innerHTML = '';
           
           if (!snapshot.exists()) {
-            contentDiv.innerHTML = '<div class="no-history"><p>🔭 No deposit history found</p></div>';
+            contentDiv.innerHTML = '<div class="no-history"><p>📜 No deposit history found</p></div>';
             return;
           }
 
@@ -2571,7 +2701,7 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Amount:</span>
-                <span class="detail-value" style="color: #00a86b; font-weight: bold;">₹${deposit.amount.toFixed(2)}</span>
+                <span class="detail-value" style="color: #A78BFA; font-weight: bold;">₹${deposit.amount.toFixed(2)}</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">UTR:</span>
@@ -2585,6 +2715,12 @@
                 <span class="detail-label">Status:</span>
                 <span class="status-badge ${statusBadgeClass}">${statusText}</span>
               </div>
+              <div class="detail-row">
+                <span class="detail-label">Actions:</span>
+                <span class="detail-value">
+                  <button class="delete-btn" onclick="deleteDeposit('${deposit.depositId}')">Delete</button>
+                </span>
+              </div>
             `;
             
             contentDiv.appendChild(card);
@@ -2594,6 +2730,21 @@
           console.error("Error loading deposit history:", error);
           contentDiv.innerHTML = '<div class="no-history"><p>❌ Failed to load deposit history</p></div>';
         });
+    }
+
+    // ✅ FIX #11: DELETE DEPOSIT FUNCTION
+    function deleteDeposit(depositId) {
+      if (confirm("Are you sure you want to delete this deposit record?")) {
+        database.ref('deposits/' + depositId).remove()
+          .then(() => {
+            showCustomPopup("Success", "Deposit record deleted successfully!");
+            loadDepositHistory();
+          })
+          .catch(error => {
+            console.error("Error deleting deposit:", error);
+            showCustomPopup("Error", "Failed to delete deposit record");
+          });
+      }
     }
 
     // ===========================
@@ -2705,7 +2856,7 @@
           contentDiv.innerHTML = '';
           
           if (!snapshot.exists()) {
-            contentDiv.innerHTML = '<div class="no-history"><p>🔭 No withdrawal history found</p></div>';
+            contentDiv.innerHTML = '<div class="no-history"><p>📜 No withdrawal history found</p></div>';
             return;
           }
 
@@ -2738,7 +2889,7 @@
               </div>
               <div class="detail-row">
                 <span class="detail-label">Amount:</span>
-                <span class="detail-value" style="color: #00a86b; font-weight: bold;">₹${withdrawal.amount.toFixed(2)}</span>
+                <span class="detail-value" style="color: #A78BFA; font-weight: bold;">₹${withdrawal.amount.toFixed(2)}</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Date & Time:</span>
@@ -2747,6 +2898,12 @@
               <div class="detail-row">
                 <span class="detail-label">Status:</span>
                 <span class="status-badge ${statusBadgeClass}">${statusText}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Actions:</span>
+                <span class="detail-value">
+                  <button class="delete-btn" onclick="deleteWithdrawal('${withdrawal.withdrawalId}')">Delete</button>
+                </span>
               </div>
             `;
             
@@ -2759,9 +2916,22 @@
         });
     }
 
-    // ===========================
-    // ⚠️ FIX #3: GIFT CODE CLAIMING (WORKS WITH ADMIN CODES)
-    // ===========================
+    // ✅ FIX #12: DELETE WITHDRAWAL FUNCTION
+    function deleteWithdrawal(withdrawalId) {
+      if (confirm("Are you sure you want to delete this withdrawal record?")) {
+        database.ref('withdrawals/' + withdrawalId).remove()
+          .then(() => {
+            showCustomPopup("Success", "Withdrawal record deleted successfully!");
+            loadWithdrawalHistory();
+          })
+          .catch(error => {
+            console.error("Error deleting withdrawal:", error);
+            showCustomPopup("Error", "Failed to delete withdrawal record");
+          });
+      }
+    }
+
+    // ✅ FIX #13: GIFT CODE CLAIMING (WORKS WITH ADMIN CODES)
     function claimGiftCode() {
       const code = document.getElementById('giftCodeInput').value.trim().toUpperCase();
       if (!code) {
@@ -2834,5 +3004,3 @@
   </script>
 </body>
 </html>
-Response
-Created file /home/user/glowbet_game_updated.html (85102 characters)
