@@ -1271,6 +1271,46 @@
     .delete-btn:hover {
       background: #DC2626;
     }
+
+    /* UPI Method Styles */
+    .method-options {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .method-option {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      background: rgba(76, 29, 149, 0.6);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 2px solid transparent;
+      font-weight: 600;
+    }
+
+    .method-option.active {
+      background: rgba(139, 92, 246, 0.3);
+      border-color: #8B5CF6;
+      color: #A78BFA;
+    }
+
+    .saved-upi-info {
+      background: rgba(16, 185, 129, 0.2);
+      border: 2px solid #10B981;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .upi-info-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+    }
   </style>
 </head>
 <body>
@@ -1535,29 +1575,70 @@
     <div class="withdrawal-header">
       <h2 style="color: white; font-size: 2rem;">Withdraw Money</h2>
     </div>
+    
+    <!-- Withdrawal Method Selection -->
     <div class="bank-details-card">
-      <h3 style="color: #A78BFA; margin-bottom: 20px;">Bank Details</h3>
-      <div id="savedBankDetails" style="display: none;">
-        <div class="saved-bank-info">
-          <div class="bank-info-item">
-            <span>Account Number:</span>
-            <strong id="savedAccNumber">****</strong>
-          </div>
+      <h3 style="color: #A78BFA; margin-bottom: 20px;">Withdrawal Method</h3>
+      
+      <div class="method-options">
+        <div class="method-option active" id="bankMethod" onclick="selectWithdrawalMethod('bank')">
+          🏦 Bank Transfer
         </div>
-        <button class="submit-btn" onclick="editBankDetails()" style="background: #F59E0B;">Edit</button>
+        <div class="method-option" id="upiMethod" onclick="selectWithdrawalMethod('upi')">
+          📱 UPI
+        </div>
       </div>
-      <div id="bankDetailsForm">
-        <div class="form-group">
-          <label class="form-label">Account Number</label>
-          <input type="text" class="form-input" id="accNumber" placeholder="Enter account number" />
+      
+      <!-- Bank Details Section -->
+      <div id="bankDetailsSection">
+        <div id="savedBankDetails" style="display: none;">
+          <div class="saved-bank-info">
+            <div class="bank-info-item">
+              <span>Account Number:</span>
+              <strong id="savedAccNumber">****</strong>
+            </div>
+            <div class="bank-info-item">
+              <span>IFSC Code:</span>
+              <strong id="savedIfscCode">****</strong>
+            </div>
+          </div>
+          <button class="submit-btn" onclick="editBankDetails()" style="background: #F59E0B;">Edit Bank Details</button>
         </div>
-        <div class="form-group">
-          <label class="form-label">IFSC Code</label>
-          <input type="text" class="form-input" id="ifscCode" placeholder="Enter IFSC code" />
+        <div id="bankDetailsForm">
+          <div class="form-group">
+            <label class="form-label">Account Number</label>
+            <input type="text" class="form-input" id="accNumber" placeholder="Enter account number" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">IFSC Code</label>
+            <input type="text" class="form-input" id="ifscCode" placeholder="Enter IFSC code" />
+          </div>
+          <button class="submit-btn" onclick="saveBankDetails()">Save Bank Details</button>
         </div>
-        <button class="submit-btn" onclick="saveBankDetails()">Save Bank Details</button>
+      </div>
+      
+      <!-- UPI Details Section -->
+      <div id="upiDetailsSection" style="display: none;">
+        <div id="savedUpiDetails" style="display: none;">
+          <div class="saved-upi-info">
+            <div class="upi-info-item">
+              <span>UPI ID:</span>
+              <strong id="savedUpiId">****</strong>
+            </div>
+          </div>
+          <button class="submit-btn" onclick="editUpiDetails()" style="background: #F59E0B;">Edit UPI Details</button>
+        </div>
+        <div id="upiDetailsForm">
+          <div class="form-group">
+            <label class="form-label">UPI ID</label>
+            <input type="text" class="form-input" id="upiId" placeholder="Enter your UPI ID (e.g., name@paytm)" />
+          </div>
+          <button class="submit-btn" onclick="saveUpiDetails()">Save UPI Details</button>
+        </div>
       </div>
     </div>
+    
+    <!-- Withdrawal Amount Section -->
     <div class="withdrawal-amount-card">
       <h3 style="color: #A78BFA; margin-bottom: 15px;">Withdrawal Amount</h3>
       <div class="form-group">
@@ -1725,6 +1806,7 @@
     let isBettingLocked = false;
     let currentRoundId = null;
     let periodStartTime = null;
+    let selectedWithdrawalMethod = 'bank'; // Default to bank
 
     // ===========================
     // ✅ FIX #1: TIMESTAMP-BASED PERIOD CALCULATION (NO SKIPPING)
@@ -2748,19 +2830,59 @@
     }
 
     // ===========================
-    // WITHDRAWAL FUNCTIONS
+    // WITHDRAWAL FUNCTIONS - WITH UPI SUPPORT
     // ===========================
     function showWithdrawalPage() {
       hideAllPages();
       document.getElementById('withdrawalPage').style.display = 'block';
       
-      if (currentUser && currentUser.bankDetails) {
+      // Initialize withdrawal method selection
+      selectWithdrawalMethod(selectedWithdrawalMethod);
+      
+      // Load saved details
+      loadSavedWithdrawalDetails();
+    }
+
+    function selectWithdrawalMethod(method) {
+      selectedWithdrawalMethod = method;
+      
+      // Update UI for method selection
+      document.getElementById('bankMethod').classList.remove('active');
+      document.getElementById('upiMethod').classList.remove('active');
+      
+      if (method === 'bank') {
+        document.getElementById('bankMethod').classList.add('active');
+        document.getElementById('bankDetailsSection').style.display = 'block';
+        document.getElementById('upiDetailsSection').style.display = 'none';
+      } else if (method === 'upi') {
+        document.getElementById('upiMethod').classList.add('active');
+        document.getElementById('bankDetailsSection').style.display = 'none';
+        document.getElementById('upiDetailsSection').style.display = 'block';
+      }
+    }
+
+    function loadSavedWithdrawalDetails() {
+      if (!currentUser) return;
+      
+      // Load bank details
+      if (currentUser.bankDetails) {
         document.getElementById('savedBankDetails').style.display = 'block';
         document.getElementById('bankDetailsForm').style.display = 'none';
         document.getElementById('savedAccNumber').textContent = currentUser.bankDetails.accNumber;
+        document.getElementById('savedIfscCode').textContent = currentUser.bankDetails.ifsc;
       } else {
         document.getElementById('savedBankDetails').style.display = 'none';
         document.getElementById('bankDetailsForm').style.display = 'block';
+      }
+      
+      // Load UPI details
+      if (currentUser.upiDetails) {
+        document.getElementById('savedUpiDetails').style.display = 'block';
+        document.getElementById('upiDetailsForm').style.display = 'none';
+        document.getElementById('savedUpiId').textContent = currentUser.upiDetails.upiId;
+      } else {
+        document.getElementById('savedUpiDetails').style.display = 'none';
+        document.getElementById('upiDetailsForm').style.display = 'block';
       }
     }
 
@@ -2795,9 +2917,50 @@
       }
     }
 
+    function saveUpiDetails() {
+      const upiId = document.getElementById('upiId').value;
+      
+      if (!upiId) {
+        showCustomPopup("Error", "Please enter UPI ID");
+        return;
+      }
+
+      // Basic UPI ID validation
+      if (!upiId.includes('@')) {
+        showCustomPopup("Error", "Please enter a valid UPI ID (e.g., name@paytm)");
+        return;
+      }
+
+      if (currentUser) {
+        currentUser.upiDetails = { upiId };
+        
+        const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
+        database.ref('users/' + cleanPhone + '/upiDetails').set({ upiId });
+        
+        localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
+        showCustomPopup("Success", "UPI details saved!");
+        showWithdrawalPage();
+      }
+    }
+
+    function editUpiDetails() {
+      document.getElementById('savedUpiDetails').style.display = 'none';
+      document.getElementById('upiDetailsForm').style.display = 'block';
+      
+      if (currentUser && currentUser.upiDetails) {
+        document.getElementById('upiId').value = currentUser.upiDetails.upiId;
+      }
+    }
+
     function submitWithdrawal() {
-      if (!currentUser || !currentUser.bankDetails) {
+      // Check if user has selected method details
+      if (selectedWithdrawalMethod === 'bank' && (!currentUser || !currentUser.bankDetails)) {
         showCustomPopup("Error", "Please save bank details first");
+        return;
+      }
+      
+      if (selectedWithdrawalMethod === 'upi' && (!currentUser || !currentUser.upiDetails)) {
+        showCustomPopup("Error", "Please save UPI details first");
         return;
       }
 
@@ -2813,17 +2976,27 @@
       }
 
       const withdrawalId = generateWithdrawalId();
-      const withdrawalData = {
+      
+      // Prepare withdrawal data based on selected method
+      let withdrawalData = {
         withdrawalId: withdrawalId,
         userId: currentUser.userId,
         phone: currentUser.phone,
         amount: amount,
-        bankDetails: currentUser.bankDetails,
+        method: selectedWithdrawalMethod,
         status: 'pending',
         timestamp: Date.now(),
         date: new Date().toISOString()
       };
+      
+      // Add method-specific details
+      if (selectedWithdrawalMethod === 'bank') {
+        withdrawalData.bankDetails = currentUser.bankDetails;
+      } else if (selectedWithdrawalMethod === 'upi') {
+        withdrawalData.upiDetails = currentUser.upiDetails;
+      }
 
+      // Deduct balance and save withdrawal request
       currentUser.balance -= amount;
       const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
       
@@ -2832,8 +3005,12 @@
       
       localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
       
-      showCustomPopup("Success", `Withdrawal request submitted! ID: ${withdrawalId}`);
+      showCustomPopup("Success", `Withdrawal request submitted! ID: ${withdrawalId}\nMethod: ${selectedWithdrawalMethod.toUpperCase()}`);
       document.getElementById('withdrawalAmount').value = '';
+      
+      // Update balances
+      updateWingoBalance();
+      updateWalletBalance();
     }
 
     function showWithdrawalHistoryPage() {
@@ -2874,6 +3051,13 @@
             const statusBadgeClass = withdrawal.status === 'pending' ? 'status-pending' : 'status-completed';
             const statusText = withdrawal.status === 'pending' ? 'Pending' : 'Completed';
             
+            let methodDetails = '';
+            if (withdrawal.method === 'bank' && withdrawal.bankDetails) {
+              methodDetails = `Bank: ${withdrawal.bankDetails.accNumber} (${withdrawal.bankDetails.ifsc})`;
+            } else if (withdrawal.method === 'upi' && withdrawal.upiDetails) {
+              methodDetails = `UPI: ${withdrawal.upiDetails.upiId}`;
+            }
+            
             card.innerHTML = `
               <div class="detail-row">
                 <span class="detail-label">Withdrawal ID:</span>
@@ -2890,6 +3074,14 @@
               <div class="detail-row">
                 <span class="detail-label">Amount:</span>
                 <span class="detail-value" style="color: #A78BFA; font-weight: bold;">₹${withdrawal.amount.toFixed(2)}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Method:</span>
+                <span class="detail-value">${withdrawal.method.toUpperCase()}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Details:</span>
+                <span class="detail-value">${methodDetails}</span>
               </div>
               <div class="detail-row">
                 <span class="detail-label">Date & Time:</span>
