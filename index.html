@@ -10,7 +10,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
   
   <style>
-    /* All your existing CSS remains the same */
+    /* CSS STYLES */
     :root {
       --primary-red: #e63946;
       --dark-red: #b92b36;
@@ -40,7 +40,6 @@
       min-height: 100vh;
     }
 
-    /* App Container - Dark Theme */
     .app-container {
       width: 100%;
       max-width: 480px;
@@ -64,7 +63,6 @@
       animation: shake 0.5s;
     }
 
-    /* Utility */
     .hidden { display: none !important; }
     .text-red { color: var(--primary-red); }
     .text-gold { color: var(--gold); }
@@ -102,7 +100,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Header - Black & Gold */
+    /* Header */
     header {
       background: #000;
       padding: 15px;
@@ -148,7 +146,7 @@
       align-items: center;
     }
 
-    /* Bottom Nav - Black Theme */
+    /* Bottom Nav */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -193,7 +191,7 @@
       to { opacity: 1; }
     }
 
-    /* HOME PAGE - Black Theme */
+    /* HOME PAGE */
     .balance-card {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(10px);
@@ -359,7 +357,7 @@
       to { transform: rotate(360deg); }
     }
 
-    /* WINGO GAME PAGE - Enhanced UI */
+    /* WINGO GAME PAGE */
     .wingo-page {
       display: none;
       background: #000;
@@ -481,7 +479,6 @@
       50% { opacity: 0.5; }
     }
 
-    /* Betting Area - Enhanced */
     .betting-area {
       background: rgba(255, 255, 255, 0.03);
       padding: 20px;
@@ -571,22 +568,10 @@
       pointer-events: none;
     }
 
-    .number-0 { 
-      background: linear-gradient(45deg, #EF4444, #8B5CF6);
-      color: white;
-    }
-    .number-1, .number-3, .number-7, .number-9 { 
-      background: linear-gradient(135deg, #10B981, #059669);
-      color: white;
-    }
-    .number-2, .number-4, .number-6, .number-8 { 
-      background: linear-gradient(135deg, #EF4444, #DC2626);
-      color: white;
-    }
-    .number-5 { 
-      background: linear-gradient(45deg, #10B981, #8B5CF6);
-      color: white;
-    }
+    .number-0 { background: linear-gradient(45deg, #EF4444, #8B5CF6); color: white; }
+    .number-1, .number-3, .number-7, .number-9 { background: linear-gradient(135deg, #10B981, #059669); color: white; }
+    .number-2, .number-4, .number-6, .number-8 { background: linear-gradient(135deg, #EF4444, #DC2626); color: white; }
+    .number-5 { background: linear-gradient(45deg, #10B981, #8B5CF6); color: white; }
 
     .size-options {
       display: flex;
@@ -628,7 +613,6 @@
       pointer-events: none;
     }
 
-    /* HISTORY SECTION */
     .history-tabs {
       display: flex;
       background: rgba(255, 255, 255, 0.03);
@@ -669,8 +653,8 @@
       border-top: none;
     }
 
-    /* LOGIN PAGE - Black Theme */
-    .login-container {
+    /* LOGIN & REGISTER PAGE */
+    .auth-container {
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -679,7 +663,7 @@
       background: #000;
     }
 
-    .login-box {
+    .auth-box {
       width: 100%;
       max-width: 450px;
       background: rgba(255, 255, 255, 0.03);
@@ -691,7 +675,6 @@
       animation: slideUp 0.5s ease;
     }
 
-    /* Customer Support */
     .customer-support {
       position: fixed;
       bottom: 100px;
@@ -718,7 +701,6 @@
       50% { transform: translateY(-10px); }
     }
 
-    /* Back Button */
     .back-button {
       position: absolute;
       top: 20px;
@@ -742,7 +724,6 @@
       transform: scale(0.95);
     }
 
-    /* BET POPUP */
     .bet-popup {
       display: none;
       position: fixed;
@@ -845,22 +826,7 @@
       color: #000;
     }
 
-    /* WIN/LOSE POPUPS */
-    .win-popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 3000;
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 0.3s;
-    }
-
-    .lose-popup {
+    .win-popup, .lose-popup {
       display: none;
       position: fixed;
       top: 0;
@@ -912,7 +878,6 @@
       50% { opacity: 0.7; }
     }
 
-    /* GIFT CODE REDEMPTION */
     .gift-code-modal {
       display: none;
       position: fixed;
@@ -938,7 +903,6 @@
       animation: popupScale 0.3s ease-out;
     }
 
-    /* DEPOSIT/WITHDRAWAL PAGE */
     .deposit-page, .withdrawal-page {
       display: none;
       background: #000;
@@ -1001,7 +965,6 @@
       cursor: not-allowed;
     }
 
-    /* AMOUNT SELECTION GRID */
     .amount-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1034,7 +997,6 @@
       box-shadow: 0 5px 15px rgba(255, 183, 3, 0.3);
     }
 
-    /* QR CODE SECTION */
     .qr-code-section {
       text-align: center;
       margin: 30px 0;
@@ -1089,18 +1051,6 @@
       font-weight: bold;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 480px) {
-      .app-container {
-        border-radius: 0;
-      }
-      .qr-code-image {
-        width: 250px;
-        height: 250px;
-      }
-    }
-
-    /* INSUFFICIENT BALANCE OVERLAY */
     .insufficient-overlay {
       display: none;
       position: fixed;
@@ -1118,7 +1068,6 @@
       border: 3px solid white;
     }
 
-    /* ADMIN MESSAGE SECTION */
     .admin-message-section {
       margin-top: 20px;
       padding: 15px;
@@ -1145,7 +1094,6 @@
       margin-bottom: 10px;
     }
     
-    /* HISTORY PAGES */
     .history-page {
       display: none;
       background: #000;
@@ -1190,7 +1138,6 @@
       font-weight: bold;
     }
     
-    /* DEPOSIT POPUP */
     .deposit-popup {
       display: none;
       position: fixed;
@@ -1228,17 +1175,26 @@
       color: #f1f5f9;
       font-size: 14px;
     }
+
+    .toggle-auth {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: var(--text-gray);
+    }
+
+    .toggle-auth span {
+      color: var(--gold);
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="app-container" id="appContainer">
-    <!-- Toast Container -->
     <div class="toast-container" id="toast-container"></div>
-
-    <!-- Insufficient Balance Overlay -->
-    <div class="insufficient-overlay" id="insufficientOverlay">
-      💸 Insufficient Balance! 💸
-    </div>
+    <div class="insufficient-overlay" id="insufficientOverlay">💸 Insufficient Balance! 💸</div>
 
     <!-- Win Popup -->
     <div class="win-popup" id="winPopup">
@@ -1268,12 +1224,8 @@
           <label class="form-label">Enter Gift Code</label>
           <input type="text" class="form-input" id="giftCodeInput" placeholder="Enter gift code">
         </div>
-        <button class="submit-btn" onclick="redeemGiftCode()">
-          🎁 REDEEM NOW
-        </button>
-        <button style="background: #333; color: white; border: none; padding: 15px; border-radius: 10px; font-size: 16px; cursor: pointer; width: 100%; margin-top: 10px;" onclick="closeGiftCodeModal()">
-          CANCEL
-        </button>
+        <button class="submit-btn" onclick="redeemGiftCode()">🎁 REDEEM NOW</button>
+        <button style="background: #333; color: white; border: none; padding: 15px; border-radius: 10px; font-size: 16px; cursor: pointer; width: 100%; margin-top: 10px;" onclick="closeGiftCodeModal()">CANCEL</button>
       </div>
     </div>
 
@@ -1281,76 +1233,101 @@
     <div class="deposit-popup" id="depositPopup">
       <div class="deposit-popup-content">
         <h3 style="color: var(--gold); margin-bottom: 15px;">✅ Deposit Request Submitted!</h3>
-        <p style="margin-bottom: 15px; color: #f1f5f9;">
-          Your deposit request has been received. Your amount will be credited immediately or I will verify from admin.
-        </p>
-        <p style="margin-bottom: 20px; font-size: 12px; color: var(--text-gray);">
-          Transaction ID: <span id="depositPopupId" style="color: var(--gold); font-weight: bold;"></span>
-        </p>
-        <button style="background: var(--gold); color: #000; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold;" onclick="closeDepositPopup()">
-          OK
-        </button>
+        <p style="margin-bottom: 15px; color: #f1f5f9;">Your deposit request has been received. Your amount will be credited immediately.</p>
+        <p style="margin-bottom: 20px; font-size: 12px; color: var(--text-gray);">Transaction ID: <span id="depositPopupId" style="color: var(--gold); font-weight: bold;"></span></p>
+        <button style="background: var(--gold); color: #000; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold;" onclick="closeDepositPopup()">OK</button>
       </div>
     </div>
 
-    <!-- Customer Support Button -->
-    <a href="https://t.me/GlowBet_support" target="_blank" class="customer-support" title="Customer Support">
-      💬
-    </a>
+    <a href="https://t.me/GlowBet_support" target="_blank" class="customer-support" title="Customer Support">💬</a>
 
-    <!-- Login Page -->
-    <div class="login-container" id="loginPage">
-      <div class="login-box">
+    <!-- LOGIN PAGE -->
+    <div class="auth-container" id="loginPage">
+      <div class="auth-box">
         <h1 style="text-align: center; font-size: 32px; font-weight: bold; margin-bottom: 10px; color: var(--gold);">GlowBet</h1>
-        <p style="text-align: center; font-size: 14px; color: var(--text-gray); margin-bottom: 30px;">
-          Premium Gaming Experience
-        </p>
+        <p style="text-align: center; font-size: 14px; color: var(--text-gray); margin-bottom: 30px;">Premium Gaming Experience</p>
         
         <div style="margin-bottom: 25px;">
-          <div style="text-align: center; padding: 12px; border-radius: 10px; font-weight: 500; color: var(--gold); background: rgba(255, 183, 3, 0.2);">
-            Phone Login
+          <div style="text-align: center; padding: 12px; border-radius: 10px; font-weight: 500; color: var(--gold); background: rgba(255, 183, 3, 0.2);">Login</div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Phone number</label>
+          <div style="display: flex; align-items: center; background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 5px; border: 1px solid #333;">
+            <div style="padding: 12px 15px; background: rgba(255, 183, 3, 0.1); border-radius: 8px; color: var(--gold); font-weight: 500; display: flex; align-items: center; gap: 8px; min-width: 80px;">+91</div>
+            <input type="tel" class="form-input" style="border: none; background: transparent;" id="loginPhone" placeholder="Enter phone number">
           </div>
         </div>
         
-        <div id="phoneLoginForm">
-          <div class="form-group">
-            <label class="form-label">Phone number</label>
-            <div style="display: flex; align-items: center; background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 5px; border: 1px solid #333;">
-              <div style="padding: 12px 15px; background: rgba(255, 183, 3, 0.1); border-radius: 8px; color: var(--gold); font-weight: 500; display: flex; align-items: center; gap: 8px; min-width: 80px;">
-                <span>+91</span>
-              </div>
-              <input type="tel" class="form-input" style="border: none; background: transparent;" id="loginPhone" placeholder="Enter phone number">
-            </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" id="loginPassword" placeholder="Password">
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 8px; margin: 20px 0; color: var(--text-gray); font-size: 14px;">
+          <input type="checkbox" style="width: 18px; height: 18px; accent-color: var(--gold); cursor: pointer;" id="rememberPassword">
+          <label for="rememberPassword">Remember password</label>
+        </div>
+        
+        <button class="submit-btn" onclick="login()">Log in</button>
+        
+        <div class="toggle-auth">
+          Don't have an account? <span onclick="showRegisterPage()">Register Now</span>
+        </div>
+        
+        <div style="text-align: center; margin-top: 10px; color: var(--text-gray); font-size: 12px;">
+          <a href="https://t.me/GlowBet_support" target="_blank" style="color: var(--gold); text-decoration: none;">Need Help? Contact Support</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- REGISTER PAGE -->
+    <div class="auth-container hidden" id="registerPage">
+      <div class="auth-box">
+        <h1 style="text-align: center; font-size: 32px; font-weight: bold; margin-bottom: 10px; color: var(--gold);">GlowBet</h1>
+        <p style="text-align: center; font-size: 14px; color: var(--text-gray); margin-bottom: 30px;">Create Account</p>
+        
+        <div style="margin-bottom: 25px;">
+          <div style="text-align: center; padding: 12px; border-radius: 10px; font-weight: 500; color: var(--gold); background: rgba(255, 183, 3, 0.2);">Register</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" id="regName" placeholder="Enter your name">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Phone number</label>
+          <div style="display: flex; align-items: center; background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 5px; border: 1px solid #333;">
+            <div style="padding: 12px 15px; background: rgba(255, 183, 3, 0.1); border-radius: 8px; color: var(--gold); font-weight: 500; display: flex; align-items: center; gap: 8px; min-width: 80px;">+91</div>
+            <input type="tel" class="form-input" style="border: none; background: transparent;" id="regPhone" placeholder="Enter phone number">
           </div>
-          
-          <div class="form-group">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-input" id="loginPassword" placeholder="Password">
-          </div>
-          
-          <div style="display: flex; align-items: center; gap: 8px; margin: 20px 0; color: var(--text-gray); font-size: 14px;">
-            <input type="checkbox" style="width: 18px; height: 18px; accent-color: var(--gold); cursor: pointer;" id="rememberPassword">
-            <label for="rememberPassword">Remember password</label>
-          </div>
-          
-          <button class="submit-btn" onclick="login()">
-            Log in
-          </button>
-          
-          <div style="text-align: center; margin-top: 20px; color: var(--text-gray); font-size: 14px;">
-            Don't have an account? <a href="#" style="color: var(--gold); text-decoration: none; font-weight: 600;" onclick="showRegister()">Register Now</a>
-          </div>
-          
-          <div style="text-align: center; margin-top: 10px; color: var(--text-gray); font-size: 12px;">
-            <a href="https://t.me/GlowBet_support" target="_blank" style="color: var(--gold); text-decoration: none;">Need Help? Contact Support</a>
-          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" id="regPassword" placeholder="Create password">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Confirm Password</label>
+          <input type="password" class="form-input" id="regConfirmPassword" placeholder="Confirm password">
+        </div>
+        
+        <button class="submit-btn" onclick="register()">Create Account</button>
+        
+        <div class="toggle-auth">
+          Already have an account? <span onclick="showLoginPage()">Login Now</span>
+        </div>
+        
+        <div style="text-align: center; margin-top: 10px; color: var(--text-gray); font-size: 12px;">
+          <a href="https://t.me/GlowBet_support" target="_blank" style="color: var(--gold); text-decoration: none;">Need Help? Contact Support</a>
         </div>
       </div>
     </div>
 
     <!-- Main App -->
     <div id="mainApp" class="hidden">
-      <!-- Header -->
       <header>
         <div class="header-top">
           <div class="user-pill" id="userPill" onclick="openGiftCodeModal()">
@@ -1368,7 +1345,6 @@
 
       <!-- === HOME PAGE === -->
       <main id="page-home" class="page-section">
-        <!-- Balance Card -->
         <div class="balance-card">
           <div class="flex justify-between">
             <div>
@@ -1385,7 +1361,6 @@
           </div>
         </div>
 
-        <!-- Main Features -->
         <div class="feature-grid">
           <div class="feature-item" onclick="switchTab('activity')">
             <div class="icon-circle">📊</div>
@@ -1405,7 +1380,6 @@
           </div>
         </div>
 
-        <!-- Games -->
         <div class="banner-area">
           <div style="font-size: 12px; color: var(--gold); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">POPULAR GAMES</div>
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px;">
@@ -1424,7 +1398,6 @@
           </div>
         </div>
 
-        <!-- Quick Actions -->
         <div style="display: flex; gap: 10px; margin-bottom: 20px;">
           <div class="banner-area w-full" style="margin-bottom: 0; display: flex; align-items: center; justify-content: space-between;">
             <div>
@@ -1448,12 +1421,9 @@
           </div>
         </div>
 
-        <!-- Admin Message Section -->
         <div class="admin-message-section" id="adminMessageSection" style="display: none;">
           <h4>📢 Admin Message</h4>
-          <div id="adminMessageContent" style="color: #f1f5f9; font-size: 14px;">
-            Loading...
-          </div>
+          <div id="adminMessageContent" style="color: #f1f5f9; font-size: 14px;">Loading...</div>
         </div>
       </main>
 
@@ -1491,48 +1461,39 @@
             <strong style="color: var(--gold);">User ID:</strong> <span id="displayUserId" style="color: white;">Loading...</span>
           </div>
         </div>
-        <button class="wallet-action-button" onclick="openGiftCodeModal()" style="background: #8B5CF6; margin-bottom: 10px;">
-          🎁 Redeem Gift Code
-        </button>
+        <button class="wallet-action-button" onclick="openGiftCodeModal()" style="background: #8B5CF6; margin-bottom: 10px;">🎁 Redeem Gift Code</button>
         <button class="wallet-action-button" onclick="logout()" style="background: #333; color: white;">Logout</button>
       </main>
 
-      <!-- === ACTIVITY PAGE (MY BETS) === -->
+      <!-- === ACTIVITY PAGE === -->
       <main id="page-activity" class="page-section hidden">
         <button class="back-button" onclick="switchTab('home')">← Back</button>
         <div style="margin-top: 50px; text-align: center;">
           <h2 style="color: var(--gold); font-size: 2rem;">My Bets</h2>
         </div>
         <div class="banner-area" id="myBetsContainer">
-          <div style="text-align: center; color: var(--text-gray); padding: 20px;">
-            No bets yet
-          </div>
+          <div style="text-align: center; color: var(--text-gray); padding: 20px;">No bets yet</div>
         </div>
       </main>
 
-      <!-- === DEPOSIT HISTORY PAGE === -->
+      <!-- === HISTORY PAGES === -->
       <div class="history-page" id="depositHistoryPage">
         <button class="back-button" onclick="goBackFromDepositHistory()">← Back</button>
         <div style="margin-top: 50px; text-align: center;">
           <h2 style="color: var(--gold); font-size: 2rem;">Deposit History</h2>
         </div>
         <div id="depositHistoryContainer">
-          <div style="text-align: center; color: var(--text-gray); padding: 20px;">
-            Loading deposit history...
-          </div>
+          <div style="text-align: center; color: var(--text-gray); padding: 20px;">Loading deposit history...</div>
         </div>
       </div>
 
-      <!-- === WITHDRAWAL HISTORY PAGE === -->
       <div class="history-page" id="withdrawalHistoryPage">
         <button class="back-button" onclick="goBackFromWithdrawalHistory()">← Back</button>
         <div style="margin-top: 50px; text-align: center;">
           <h2 style="color: var(--gold); font-size: 2rem;">Withdrawal History</h2>
         </div>
         <div id="withdrawalHistoryContainer">
-          <div style="text-align: center; color: var(--text-gray); padding: 20px;">
-            Loading withdrawal history...
-          </div>
+          <div style="text-align: center; color: var(--text-gray); padding: 20px;">Loading withdrawal history...</div>
         </div>
       </div>
 
@@ -1610,21 +1571,15 @@
               </tbody>
             </table>
             <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; gap: 15px;">
-              <button style="background: rgba(255, 183, 3, 0.1); color: var(--gold); border: 1px solid #333; padding: 10px 15px; border-radius: 8px; cursor: pointer;" id="prevPageBtn" onclick="previousPage()" disabled>
-                ← Previous
-              </button>
-              <div style="font-weight: bold; color: var(--gold); font-size: 14px;">
-                Page <span id="currentPageNum">1</span> of <span id="totalPagesNum">1</span>
-              </div>
-              <button style="background: rgba(255, 183, 3, 0.1); color: var(--gold); border: 1px solid #333; padding: 10px 15px; border-radius: 8px; cursor: pointer;" id="nextPageBtn" onclick="nextPage()">
-                Next →
-              </button>
+              <button style="background: rgba(255, 183, 3, 0.1); color: var(--gold); border: 1px solid #333; padding: 10px 15px; border-radius: 8px; cursor: pointer;" id="prevPageBtn" onclick="previousPage()" disabled>← Previous</button>
+              <div style="font-weight: bold; color: var(--gold); font-size: 14px;">Page <span id="currentPageNum">1</span> of <span id="totalPagesNum">1</span></div>
+              <button style="background: rgba(255, 183, 3, 0.1); color: var(--gold); border: 1px solid #333; padding: 10px 15px; border-radius: 8px; cursor: pointer;" id="nextPageBtn" onclick="nextPage()">Next →</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- === DEPOSIT PAGE WITH QR === -->
+      <!-- === DEPOSIT PAGE === -->
       <div class="deposit-page" id="depositPage">
         <button class="back-button" onclick="goBackFromDeposit()">← Back</button>
         <div style="margin-top: 50px; text-align: center;">
@@ -1633,40 +1588,27 @@
         </div>
         
         <div class="deposit-form-card">
-          <!-- Amount Selection -->
           <div class="form-group">
             <label class="form-label">Select Deposit Amount</label>
-            <div class="amount-grid" id="amountGrid">
-              <!-- Amount options will be generated by JavaScript -->
-            </div>
+            <div class="amount-grid" id="amountGrid"></div>
             <div style="margin-top: 15px; display: flex; align-items: center; gap: 10px;">
               <div style="color: var(--text-gray); font-size: 14px;">Custom Amount:</div>
               <input type="number" class="form-input" id="customAmount" placeholder="Enter amount" min="100" max="50000" style="flex: 1; padding: 10px;" oninput="selectCustomAmount()">
             </div>
-            <div style="margin-top: 10px; color: var(--gold); font-size: 13px; text-align: center;">
-              Selected Amount: <strong id="selectedAmountDisplay">₹0</strong>
-            </div>
+            <div style="margin-top: 10px; color: var(--gold); font-size: 13px; text-align: center;">Selected Amount: <strong id="selectedAmountDisplay">₹0</strong></div>
           </div>
 
-          <!-- QR Code Section (Shows after amount selection) -->
           <div id="qrSection" class="hidden">
             <div class="qr-code-section">
               <h3 style="color: var(--gold); margin-bottom: 10px;">Scan QR Code to Pay</h3>
               <p style="color: var(--text-gray); margin-bottom: 15px; font-size: 14px;">Scan this QR with any UPI app to deposit funds</p>
-              
               <div class="qr-code-image">
-                <!-- DIRECT QR CODE IMAGE -->
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=upi://pay?pa=glowbet@upi&pn=GlowBet&am=100&cu=INR" alt="GlowBet QR Code" id="qrCodeImage">
               </div>
-              
               <div style="margin-top: 15px; padding: 10px; background: rgba(255, 183, 3, 0.1); border-radius: 8px;">
                 <p style="color: var(--text-gray); font-size: 16px; margin-bottom: 5px;">Payment Details:</p>
-                <p style="font-size: 18px; font-weight: bold; color: var(--gold);">
-                  Amount: <span id="qrAmountDisplay">₹0</span>
-                </p>
-                <p style="font-size: 12px; color: var(--text-gray); margin-top: 5px;">
-                  UPI ID: <strong>glowbet@upi</strong>
-                </p>
+                <p style="font-size: 18px; font-weight: bold; color: var(--gold);">Amount: <span id="qrAmountDisplay">₹0</span></p>
+                <p style="font-size: 12px; color: var(--text-gray); margin-top: 5px;">UPI ID: <strong>glowbet@upi</strong></p>
               </div>
             </div>
             
@@ -1685,20 +1627,13 @@
             <div class="form-group" style="margin-top: 20px;">
               <label class="form-label">Enter UPI Transaction ID (12-digit UTR)</label>
               <input type="text" class="form-input" id="utrNumber" placeholder="Enter 12-digit UTR number from payment receipt" maxlength="12">
-              <div style="font-size: 11px; color: var(--text-gray); margin-top: 5px;">
-                Find UTR in your payment receipt from bank/UPI app
-              </div>
+              <div style="font-size: 11px; color: var(--text-gray); margin-top: 5px;">Find UTR in your payment receipt from bank/UPI app</div>
             </div>
             
-            <button class="submit-btn" id="depositSubmitBtn" onclick="submitDeposit()" disabled>
-              Submit Deposit Request
-            </button>
+            <button class="submit-btn" id="depositSubmitBtn" onclick="submitDeposit()" disabled>Submit Deposit Request</button>
           </div>
           
-          <!-- Initial Deposit Button (Shows before amount selection) -->
-          <button class="submit-btn" id="showQRBtn" onclick="showQRCode()">
-            Show QR Code for Deposit
-          </button>
+          <button class="submit-btn" id="showQRBtn" onclick="showQRCode()">Show QR Code for Deposit</button>
         </div>
       </div>
 
@@ -1721,24 +1656,11 @@
         </div>
       </div>
 
-      <!-- Bottom Navigation -->
       <nav class="bottom-nav" id="bottomNav">
-        <div class="nav-item active" onclick="switchTab('home')">
-          <div class="nav-icon">🏠</div>
-          <div>HOME</div>
-        </div>
-        <div class="nav-item" onclick="switchTab('activity')">
-          <div class="nav-icon">📊</div>
-          <div>MY BETS</div>
-        </div>
-        <div class="nav-item" onclick="switchTab('wallet')">
-          <div class="nav-icon">💰</div>
-          <div>WALLET</div>
-        </div>
-        <div class="nav-item" onclick="switchTab('account')">
-          <div class="nav-icon">👤</div>
-          <div>ACCOUNT</div>
-        </div>
+        <div class="nav-item active" onclick="switchTab('home')"><div class="nav-icon">🏠</div><div>HOME</div></div>
+        <div class="nav-item" onclick="switchTab('activity')"><div class="nav-icon">📊</div><div>MY BETS</div></div>
+        <div class="nav-item" onclick="switchTab('wallet')"><div class="nav-icon">💰</div><div>WALLET</div></div>
+        <div class="nav-item" onclick="switchTab('account')"><div class="nav-icon">👤</div><div>ACCOUNT</div></div>
       </nav>
     </div>
   </div>
@@ -1764,7 +1686,6 @@
     </div>
   </div>
 
-  <!-- Custom Amount Modal -->
   <div class="bet-popup" id="customAmountModal">
     <div class="bet-popup-content">
       <h3 style="color: var(--gold); margin-bottom: 10px;">Enter Custom Amount</h3>
@@ -1778,7 +1699,7 @@
 
   <script>
     // ===========================
-    // FIXED: FIREBASE CONFIGURATION
+    // FIREBASE CONFIGURATION
     // ===========================
     const firebaseConfig = {
       apiKey: "AIzaSyCAHzv-VxvatsG9CFsCzbrNx9X6uaKRAa4",
@@ -1791,50 +1712,31 @@
       measurementId: "G-53QM377N5M"
     };
 
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
 
-    // ===========================
-    // FIXED: AUDIO CONTEXT WITH WINGO PAGE CHECK
-    // ===========================
     let audioContext = null;
     let isBeepPlaying = false;
     let isWingoPageActive = false;
 
     function playBeepSound() {
-      if (!isWingoPageActive) return; // Only play sound if on Wingo page
-      
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      
+      if (!isWingoPageActive) return;
+      if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
       if (isBeepPlaying) return;
       isBeepPlaying = true;
-
       const oscillator = audioContext.createOscillator();
       const gainNode = audioContext.createGain();
-      
       oscillator.connect(gainNode);
       gainNode.connect(audioContext.destination);
-      
       oscillator.frequency.value = 800;
       oscillator.type = 'sine';
-      
       gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
       gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
-      
       oscillator.start(audioContext.currentTime);
       oscillator.stop(audioContext.currentTime + 0.2);
-      
-      setTimeout(() => {
-        isBeepPlaying = false;
-      }, 200);
+      setTimeout(() => isBeepPlaying = false, 200);
     }
 
-    // ===========================
-    // GLOBAL VARIABLES
-    // ===========================
     let currentUser = null;
     let currentBet = null;
     let betAmount = 100;
@@ -1847,48 +1749,34 @@
     let currentRoundId = null;
     let activeTab = 'home';
     let pendingResultCheck = null;
-    let notificationCount = 0;
     let betLockTimer = null;
-    
-    // Deposit Variables
     let selectedDepositAmount = 0;
     const depositAmounts = [100, 200, 300, 500, 800, 900, 1100];
 
     // ===========================
-    // FIXED: PERIOD NUMBER LOGIC - CORRECTED
+    // FIXED: PERIOD GENERATION
     // ===========================
-    function generatePeriodNumber() {
-      const now = new Date();
+    function generatePeriodNumber(dateInput) {
+      const now = dateInput ? new Date(dateInput) : new Date();
       const year = now.getFullYear();
       const month = String(now.getMonth() + 1).padStart(2, '0');
       const day = String(now.getDate()).padStart(2, '0');
-      
-      // Calculate minutes since midnight
       const hours = now.getHours();
       const minutes = now.getMinutes();
       const totalMinutesSinceMidnight = (hours * 60) + minutes;
-      
-      // Each period is 1 minute, starting from 0001 at 00:00
       const periodNumber = String(totalMinutesSinceMidnight + 1).padStart(4, '0');
-      
       return `${year}${month}${day}${periodNumber}`;
     }
 
-    // ===========================
-    // FIXED: PERIOD AND TIMER - WITH WINGO CHECK
-    // ===========================
     function updatePeriodAndTimer() {
-      if (!isWingoPageActive) return; // Only update if on Wingo page
-      
+      if (!isWingoPageActive) return;
       const now = new Date();
       const seconds = now.getSeconds();
       const remainingSeconds = 60 - seconds;
       
-      currentRoundId = generatePeriodNumber();
+      currentRoundId = generatePeriodNumber(now);
       const roundIdElement = document.getElementById('currentRoundId');
-      if (roundIdElement) {
-        roundIdElement.textContent = currentRoundId.slice(-4);
-      }
+      if (roundIdElement) roundIdElement.textContent = currentRoundId.slice(-4);
       
       const timerEl = document.getElementById('countdownTimer');
       if (timerEl) {
@@ -1911,160 +1799,47 @@
     }
 
     // ===========================
-    // ENHANCED: RANDOM NUMBER GENERATOR WITH REVERSAL SYSTEM
-    // ===========================
-    let lastResults = [];
-    let bettingPatterns = {
-      red: 0,
-      green: 0,
-      violet: 0,
-      big: 0,
-      small: 0
-    };
-
-    function generateSmartRandomNumber() {
-      // Get total bets from Firebase for current round
-      return new Promise((resolve) => {
-        database.ref('user_bets').once('value').then(snapshot => {
-          const allBets = snapshot.val();
-          let totalBetAmount = 0;
-          let colorBets = { red: 0, green: 0, violet: 0 };
-          let sizeBets = { big: 0, small: 0 };
-          
-          if (allBets) {
-            Object.values(allBets).forEach(userBets => {
-              Object.values(userBets).forEach(bet => {
-                if (bet.roundId === currentRoundId) {
-                  totalBetAmount += bet.amount;
-                  
-                  if (bet.selection === 'red') colorBets.red += bet.amount;
-                  else if (bet.selection === 'green') colorBets.green += bet.amount;
-                  else if (bet.selection === 'violet') colorBets.violet += bet.amount;
-                  else if (bet.selection === 'big') sizeBets.big += bet.amount;
-                  else if (bet.selection === 'small') sizeBets.small += bet.amount;
-                }
-              });
-            });
-          }
-          
-          // Reversal System: Opposite of what has more money
-          let possibleNumbers = [];
-          
-          // Check if admin is controlling
-          database.ref('admin_control').once('value').then(adminSnap => {
-            const adminControl = adminSnap.val();
-            
-            if (adminControl && adminControl.active) {
-              // Admin controlled result
-              const adminNumber = adminControl.number || Math.floor(Math.random() * 10);
-              resolve({
-                number: adminNumber,
-                colors: getColorForNumber(adminNumber),
-                size: adminNumber >= 5 ? 'big' : 'small'
-              });
-              return;
-            }
-            
-            // Normal random with reversal logic
-            if (totalBetAmount > 0) {
-              // Find highest bet categories
-              const highestColor = Object.keys(colorBets).reduce((a, b) => colorBets[a] > colorBets[b] ? a : b);
-              const highestSize = Object.keys(sizeBets).reduce((a, b) => sizeBets[a] > sizeBets[b] ? a : b);
-              
-              // Generate numbers opposite to highest bets
-              for (let i = 0; i < 10; i++) {
-                const colors = getColorForNumber(i);
-                const size = i >= 5 ? 'big' : 'small';
-                
-                // Skip if matches highest bet color
-                if (colorBets[highestColor] > 0 && colors.includes(highestColor)) {
-                  continue;
-                }
-                
-                // Skip if matches highest bet size
-                if (sizeBets[highestSize] > 0 && size === highestSize) {
-                  continue;
-                }
-                
-                possibleNumbers.push(i);
-              }
-              
-              // If no opposite numbers found, use all
-              if (possibleNumbers.length === 0) {
-                possibleNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-              }
-            } else {
-              // If no bets, truly random
-              possibleNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-            }
-            
-            // Random selection from possible numbers
-            const randomIndex = Math.floor(Math.random() * possibleNumbers.length);
-            const selectedNumber = possibleNumbers[randomIndex];
-            
-            resolve({
-              number: selectedNumber,
-              colors: getColorForNumber(selectedNumber),
-              size: selectedNumber >= 5 ? 'big' : 'small'
-            });
-          });
-        });
-      });
-    }
-
-    // ===========================
-    // FIXED: PROCESS ROUND RESULT WITH PERIOD MATCHING
+    // FIXED: FULL LOTTERY RANDOM LOGIC
     // ===========================
     function processRoundResult() {
-      if (!isWingoPageActive) return; // Only process if on Wingo page
+      if (!isWingoPageActive) return;
+      const previousTime = new Date(Date.now() - 1000);
+      const resolvedPeriodId = generatePeriodNumber(previousTime);
+      const randomNum = Math.floor(Math.random() * 10);
       
-      // Use smart random generator
-      generateSmartRandomNumber().then(smartResult => {
-        const result = {
-          number: smartResult.number,
-          colors: smartResult.colors,
-          size: smartResult.size,
-          period: currentRoundId, // Use current period
-          timestamp: Date.now(),
-          source: 'smart_random'
-        };
-        
-        // Save to Firebase
-        database.ref('results/' + currentRoundId).set(result);
-        
-        // Add to history
-        lastResults.unshift(result);
-        if (lastResults.length > 20) {
-          lastResults.pop();
-        }
-        
-        // Update betting patterns
-        smartResult.colors.forEach(color => {
-          if (bettingPatterns[color] !== undefined) {
-            bettingPatterns[color]++;
-          }
-        });
-        bettingPatterns[smartResult.size]++;
-        
-        checkUserBetsForRound(currentRoundId, result);
-      });
+      const result = {
+        number: randomNum,
+        colors: getColorForNumber(randomNum),
+        size: randomNum >= 5 ? 'big' : 'small',
+        period: resolvedPeriodId,
+        timestamp: Date.now(),
+        source: 'lottery_random'
+      };
       
-      setTimeout(() => {
-        unlockAllButtons();
-      }, 2000);
+      database.ref('results/' + resolvedPeriodId).set(result);
+      allResults.unshift(result);
+      if (allResults.length > 20) allResults.pop();
+      
+      checkUserBetsForRound(resolvedPeriodId, result);
+      setTimeout(() => unlockAllButtons(), 2000);
+    }
+
+    function getColorForNumber(number) {
+      if (number === 0) return ['red', 'violet'];
+      if (number === 5) return ['green', 'violet'];
+      if ([1, 3, 7, 9].includes(number)) return ['green'];
+      return ['red'];
     }
 
     // ===========================
-    // FIXED: UI FUNCTIONS
+    // UI & NOTIFICATIONS
     // ===========================
     function showToast(message) {
       const container = document.getElementById('toast-container');
       const toast = document.createElement('div');
       toast.className = 'toast';
       toast.innerText = message;
-      
       container.appendChild(toast);
-      
       setTimeout(() => {
         toast.style.opacity = '0';
         toast.style.transform = 'translateY(-20px)';
@@ -2075,48 +1850,30 @@
     function showInsufficientBalance() {
       const appContainer = document.getElementById('appContainer');
       const overlay = document.getElementById('insufficientOverlay');
-      
       overlay.style.display = 'block';
       appContainer.classList.add('shake');
-      playErrorSound();
-      
+      if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      osc.connect(gain);
+      gain.connect(audioContext.destination);
+      osc.frequency.value = 200;
+      osc.type = 'sawtooth';
+      gain.gain.setValueAtTime(0.3, audioContext.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+      osc.start();
+      osc.stop(audioContext.currentTime + 0.3);
       setTimeout(() => {
         appContainer.classList.remove('shake');
         overlay.style.display = 'none';
       }, 1500);
     }
 
-    function playErrorSound() {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
-      
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
-      
-      oscillator.frequency.value = 200;
-      oscillator.type = 'sawtooth';
-      
-      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-      
-      oscillator.start(audioContext.currentTime);
-      oscillator.stop(audioContext.currentTime + 0.3);
-    }
-
-    // ===========================
-    // FIXED: BUTTONS DISABLE ISSUE
-    // ===========================
     function unlockAllButtons() {
       isBettingLocked = false;
       const bettingArea = document.getElementById('bettingArea');
       if (bettingArea) {
-        bettingArea.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => {
-          el.classList.remove('disabled');
-        });
+        bettingArea.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => el.classList.remove('disabled'));
       }
     }
 
@@ -2125,9 +1882,7 @@
         isBettingLocked = true;
         const bettingArea = document.getElementById('bettingArea');
         if (bettingArea) {
-          bettingArea.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => {
-            el.classList.add('disabled');
-          });
+          bettingArea.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => el.classList.add('disabled'));
         }
       }
     }
@@ -2137,76 +1892,13 @@
         isBettingLocked = false;
         const bettingArea = document.getElementById('bettingArea');
         if (bettingArea) {
-          bettingArea.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => {
-            el.classList.remove('disabled');
-          });
+          bettingArea.querySelectorAll('.color-option, .number-cell, .size-option').forEach(el => el.classList.remove('disabled'));
         }
       }
     }
 
     // ===========================
-    // FIXED: GET COLOR FOR NUMBER
-    // ===========================
-    function getColorForNumber(number) {
-      if (number === 0) return ['red', 'violet'];
-      if (number === 5) return ['green', 'violet'];
-      if ([1, 3, 7, 9].includes(number)) return ['green'];
-      return ['red'];
-    }
-
-    // ===========================
-    // FIXED: PROCESS BET RESULT
-    // ===========================
-    function processBetResult(bet, result, roundId) {
-      let won = false;
-      let winAmount = 0;
-
-      if (typeof bet.selection === 'number') {
-        won = (bet.selection === result.number);
-        winAmount = won ? bet.amount * 9.0 : 0;
-      } else if (bet.selection === 'red') {
-        won = result.colors.includes('red');
-        winAmount = won ? bet.amount * 1.98 : 0;
-      } else if (bet.selection === 'green') {
-        won = result.colors.includes('green');
-        winAmount = won ? bet.amount * 1.98 : 0;
-      } else if (bet.selection === 'violet') {
-        won = result.colors.includes('violet');
-        winAmount = won ? bet.amount * 4.0 : 0;
-      } else if (bet.selection === 'big') {
-        won = (result.size === 'big');
-        winAmount = won ? bet.amount * 1.98 : 0;
-      } else if (bet.selection === 'small') {
-        won = (result.size === 'small');
-        winAmount = won ? bet.amount * 1.98 : 0;
-      }
-
-      if (won) {
-        const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
-        
-        database.ref('users/' + cleanPhone).once('value').then(snapshot => {
-          const userData = snapshot.val();
-          const newBalance = (userData.balance || 0) + winAmount;
-          
-          database.ref('users/' + cleanPhone + '/balance').set(newBalance).then(() => {
-            currentUser.balance = newBalance;
-            localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
-            
-            database.ref('user_bets/' + currentUser.userId + '/' + roundId + '/status').set('won');
-            
-            updateUserInfo();
-            showWinPopup(winAmount);
-            showToast(`🎉 Congratulations! You won ₹${winAmount.toFixed(2)}!`);
-          });
-        });
-      } else {
-        database.ref('user_bets/' + currentUser.userId + '/' + roundId + '/status').set('lost');
-        showLosePopup(bet.amount);
-      }
-    }
-
-    // ===========================
-    // FIXED: AUTHENTICATION
+    // AUTHENTICATION (LOGIN & REGISTER)
     // ===========================
     function checkAutoLogin() {
       const savedUser = localStorage.getItem('glowbet_user');
@@ -2225,6 +1917,7 @@
                 currentUser = userData;
                 localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
                 document.getElementById("loginPage").classList.add("hidden");
+                document.getElementById("registerPage").classList.add("hidden");
                 document.getElementById("mainApp").classList.remove("hidden");
                 switchTab('home');
                 checkPendingBets();
@@ -2249,7 +1942,6 @@
     function login() {
       const phone = document.getElementById('loginPhone').value;
       const password = document.getElementById('loginPassword').value;
-      
       if (!phone || !password) {
         showToast("Please enter phone number and password");
         return;
@@ -2265,20 +1957,7 @@
           }
           proceedLogin(userData);
         } else {
-          const userId = 'GB' + Date.now().toString().slice(-8);
-          const newUser = {
-            phone: phone,
-            password: password,
-            balance: 1000,
-            userId: userId,
-            status: 'active',
-            registeredDate: new Date().toISOString(),
-            inviteCode: '663221064676'
-          };
-          
-          database.ref('users/' + cleanPhone).set(newUser).then(() => {
-            proceedLogin(newUser);
-          });
+          showToast("Invalid Phone Number or Password");
         }
       }).catch(error => {
         console.error("Login error:", error);
@@ -2286,13 +1965,72 @@
       });
     }
 
+    function showLoginPage() {
+      document.getElementById('registerPage').classList.add('hidden');
+      document.getElementById('loginPage').classList.remove('hidden');
+    }
+
+    function showRegisterPage() {
+      document.getElementById('loginPage').classList.add('hidden');
+      document.getElementById('registerPage').classList.remove('hidden');
+    }
+
+    function register() {
+      const name = document.getElementById('regName').value;
+      const phone = document.getElementById('regPhone').value;
+      const password = document.getElementById('regPassword').value;
+      const confirmPassword = document.getElementById('regConfirmPassword').value;
+
+      if (!name || !phone || !password || !confirmPassword) {
+        showToast("Please fill all fields");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        showToast("Passwords do not match");
+        return;
+      }
+
+      const cleanPhone = phone.replace(/[^0-9]/g, '');
+      
+      database.ref('users/' + cleanPhone).once('value').then(snapshot => {
+        if (snapshot.exists()) {
+          showToast("Phone number already registered. Please Login.");
+          return;
+        }
+
+        const userId = 'GB' + Date.now().toString().slice(-8);
+        const newUser = {
+          name: name,
+          phone: phone,
+          password: password,
+          balance: 28, // Fixed Signup Bonus 28
+          userId: userId,
+          status: 'active',
+          registeredDate: new Date().toISOString(),
+          inviteCode: '663221064676'
+        };
+        
+        database.ref('users/' + cleanPhone).set(newUser).then(() => {
+          showToast("Registration Successful! Please Login.");
+          showLoginPage();
+        }).catch(error => {
+          console.error("Registration error:", error);
+          showToast("Registration failed. Try again.");
+        });
+      }).catch(error => {
+        console.error("Error checking phone:", error);
+        showToast("Connection error. Try again.");
+      });
+    }
+
     function proceedLogin(userData) {
       currentUser = userData;
       localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
       showToast("Login successful!");
-      
       setTimeout(() => {
         document.getElementById("loginPage").classList.add("hidden");
+        document.getElementById("registerPage").classList.add("hidden");
         document.getElementById("mainApp").classList.remove("hidden");
         switchTab('home');
         checkPendingBets();
@@ -2300,28 +2038,16 @@
       }, 1000);
     }
 
-    // ===========================
-    // NEW: ADMIN MESSAGE SYSTEM
-    // ===========================
     function loadAdminMessage() {
       database.ref('admin_message').once('value').then(snapshot => {
         const message = snapshot.val();
         if (message && message.text) {
           document.getElementById('adminMessageSection').style.display = 'block';
           document.getElementById('adminMessageContent').innerHTML = message.text;
-          
-          setTimeout(() => {
-            document.getElementById('adminMessageSection').addEventListener('click', function() {
-              this.style.display = 'none';
-            });
-          }, 10000);
         }
       });
     }
 
-    // ===========================
-    // FIXED: TAB SWITCHING
-    // ===========================
     function switchTab(tabId) {
       document.querySelectorAll('main').forEach(el => el.classList.add('hidden'));
       document.getElementById('wingoPage').style.display = 'none';
@@ -2360,7 +2086,6 @@
 
     function updateUserInfo() {
       if (!currentUser) return;
-      
       document.getElementById('homeBalance').textContent = `₹${currentUser.balance.toFixed(2)}`;
       document.getElementById('walletBalance').textContent = `₹${currentUser.balance.toFixed(2)}`;
       document.getElementById('wingoBalance').textContent = `₹${currentUser.balance.toFixed(2)}`;
@@ -2369,16 +2094,11 @@
       document.getElementById('username').textContent = currentUser.userId ? currentUser.userId.substring(0, 6) : 'User';
     }
 
-    // ===========================
-    // FIXED: WINGO GAME INITIALIZATION WITH SOUND CONTROL
-    // ===========================
     function openWingo() {
       document.querySelectorAll('main').forEach(el => el.classList.add('hidden'));
       document.getElementById('wingoPage').style.display = 'block';
-      
       document.getElementById('bottomNav').classList.add('hide-nav');
       document.getElementById('page-title').textContent = 'Wingo Game';
-      
       isWingoPageActive = true;
       initializeWingo();
     }
@@ -2391,20 +2111,14 @@
 
     function startCountdown() {
       clearInterval(countdownInterval);
-      
       updatePeriodAndTimer();
-      
       countdownInterval = setInterval(() => {
         updatePeriodAndTimer();
       }, 1000);
-      
       listenToFirebaseResults();
       checkPendingBets();
     }
 
-    // ===========================
-    // FIXED: OTHER UTILITY FUNCTIONS
-    // ===========================
     function changeAmount(delta) {
       betAmount = Math.max(10, betAmount + delta);
       document.getElementById('betAmount').textContent = betAmount;
@@ -2438,10 +2152,7 @@
     function showWinPopup(amount) {
       document.getElementById('winAmount').textContent = `You won ₹${amount.toFixed(2)}!`;
       document.getElementById('winPopup').style.display = 'flex';
-      
-      setTimeout(() => {
-        closeWinPopup();
-      }, 3000);
+      setTimeout(() => closeWinPopup(), 3000);
     }
 
     function closeWinPopup() {
@@ -2451,10 +2162,7 @@
     function showLosePopup(amount) {
       document.getElementById('loseAmount').textContent = `You lost ₹${amount.toFixed(2)}`;
       document.getElementById('losePopup').style.display = 'flex';
-      
-      setTimeout(() => {
-        closeLosePopup();
-      }, 3000);
+      setTimeout(() => closeLosePopup(), 3000);
     }
 
     function closeLosePopup() {
@@ -2476,82 +2184,44 @@
 
     function redeemGiftCode() {
       const code = document.getElementById('giftCodeInput').value.trim().toUpperCase();
-      
-      if (!code) {
-        showToast('Please enter gift code');
-        return;
-      }
-
-      if (!currentUser) {
-        showToast('Please login first');
-        return;
-      }
-
+      if (!code) { showToast('Please enter gift code'); return; }
+      if (!currentUser) { showToast('Please login first'); return; }
       database.ref('gift_codes/' + code).once('value').then(snapshot => {
         const giftCode = snapshot.val();
+        if (!giftCode) { showToast('❌ Invalid gift code'); return; }
+        if (giftCode.status !== 'active') { showToast('❌ Gift code already used or expired'); return; }
+        if (giftCode.maxUsers > 0 && (giftCode.usedCount || 0) >= giftCode.maxUsers) { showToast('❌ Gift code usage limit reached'); return; }
         
-        if (!giftCode) {
-          showToast('❌ Invalid gift code');
-          return;
-        }
-
-        if (giftCode.status !== 'active') {
-          showToast('❌ Gift code already used or expired');
-          return;
-        }
-
-        if (giftCode.maxUsers > 0 && (giftCode.usedCount || 0) >= giftCode.maxUsers) {
-          showToast('❌ Gift code usage limit reached');
-          return;
-        }
-
         const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
-        
         const newBalance = (currentUser.balance || 0) + giftCode.amount;
-        
         database.ref('users/' + cleanPhone + '/balance').set(newBalance).then(() => {
           const updates = {};
           updates['gift_codes/' + code + '/usedCount'] = (giftCode.usedCount || 0) + 1;
           updates['gift_codes/' + code + '/usedBy/' + cleanPhone] = true;
-          updates['gift_codes/' + code + '/usedAt'] = Date.now();
-          
-          if (giftCode.maxUsers > 0 && (giftCode.usedCount || 0) + 1 >= giftCode.maxUsers) {
-            updates['gift_codes/' + code + '/status'] = 'used';
-          }
-          
+          if (giftCode.maxUsers > 0 && (giftCode.usedCount || 0) + 1 >= giftCode.maxUsers) updates['gift_codes/' + code + '/status'] = 'used';
           database.ref().update(updates).then(() => {
             currentUser.balance = newBalance;
             localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
-            
             showToast(`🎉 Gift code redeemed! ₹${giftCode.amount} added to your balance`);
             updateUserInfo();
             closeGiftCodeModal();
           });
         });
-      }).catch(error => {
-        console.error('Error redeeming gift code:', error);
-        showToast('❌ Error redeeming gift code');
-      });
+      }).catch(error => { console.error('Error redeeming gift code:', error); showToast('❌ Error redeeming gift code'); });
     }
 
-    // ===========================
-    // FIXED: DEPOSIT SYSTEM WITH POPUP
-    // ===========================
+    // Deposit & Withdrawal Logic
     function initializeDepositPage() {
       const amountGrid = document.getElementById('amountGrid');
       amountGrid.innerHTML = '';
-      
       depositAmounts.forEach(amount => {
         const option = document.createElement('div');
         option.className = 'amount-option';
         option.textContent = `₹${amount}`;
         option.dataset.amount = amount;
-        
         option.onclick = () => selectAmount(amount);
-        
         amountGrid.appendChild(option);
       });
-      
       selectedDepositAmount = 0;
       document.getElementById('selectedAmountDisplay').textContent = '₹0';
       document.getElementById('customAmount').value = '';
@@ -2562,32 +2232,19 @@
     
     function selectAmount(amount) {
       selectedDepositAmount = amount;
-      
       document.getElementById('selectedAmountDisplay').textContent = `₹${amount}`;
       document.getElementById('customAmount').value = amount;
-      
-      document.querySelectorAll('.amount-option').forEach(opt => {
-        if (parseInt(opt.dataset.amount) === amount) {
-          opt.classList.add('selected');
-        } else {
-          opt.classList.remove('selected');
-        }
-      });
-      
+      document.querySelectorAll('.amount-option').forEach(opt => opt.classList.remove('selected'));
+      document.querySelector(`.amount-option[data-amount="${amount}"]`).classList.add('selected');
       document.getElementById('showQRBtn').disabled = false;
     }
     
     function selectCustomAmount() {
       const customAmount = parseInt(document.getElementById('customAmount').value);
-      
       if (customAmount && customAmount >= 100 && customAmount <= 50000) {
         selectedDepositAmount = customAmount;
         document.getElementById('selectedAmountDisplay').textContent = `₹${customAmount}`;
-        
-        document.querySelectorAll('.amount-option').forEach(opt => {
-          opt.classList.remove('selected');
-        });
-        
+        document.querySelectorAll('.amount-option').forEach(opt => opt.classList.remove('selected'));
         document.getElementById('showQRBtn').disabled = false;
       } else {
         selectedDepositAmount = 0;
@@ -2601,52 +2258,26 @@
         showToast('Please select amount between ₹100 - ₹50,000');
         return;
       }
-      
       document.getElementById('qrSection').classList.remove('hidden');
       document.getElementById('showQRBtn').style.display = 'none';
-      
       document.getElementById('qrAmountDisplay').textContent = `₹${selectedDepositAmount}`;
-      
-      const qrImage = document.getElementById('qrCodeImage');
-      qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=upi://pay?pa=glowbet@upi&pn=GlowBet&am=${selectedDepositAmount}&cu=INR`;
-      
+      document.getElementById('qrCodeImage').src = `https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=upi://pay?pa=glowbet@upi&pn=GlowBet&am=${selectedDepositAmount}&cu=INR`;
       document.getElementById('depositSubmitBtn').disabled = false;
-      
       document.getElementById('qrSection').scrollIntoView({ behavior: 'smooth' });
     }
     
     function submitDeposit() {
       const utr = document.getElementById('utrNumber').value.trim();
-      
-      if (!utr || utr.length < 10) {
-        showToast('Please enter valid UTR number (min 10 digits)');
-        return;
-      }
-      
-      if (!currentUser) {
-        showToast('Please login first');
-        return;
-      }
-      
+      if (!utr || utr.length < 10) { showToast('Please enter valid UTR number (min 10 digits)'); return; }
+      if (!currentUser) { showToast('Please login first'); return; }
       const depositId = 'DEP' + Date.now().toString().slice(-10);
       const depositData = {
-        depositId: depositId,
-        userId: currentUser.userId,
-        phone: currentUser.phone,
-        amount: selectedDepositAmount,
-        method: 'qr',
-        utr: utr,
-        status: 'pending',
-        timestamp: Date.now(),
-        date: new Date().toISOString()
+        depositId: depositId, userId: currentUser.userId, phone: currentUser.phone, amount: selectedDepositAmount, method: 'qr', utr: utr, status: 'pending', timestamp: Date.now(), date: new Date().toISOString()
       };
-
       database.ref('deposits/' + depositId).set(depositData).then(() => {
         document.getElementById('depositPopupId').textContent = depositId;
         document.getElementById('depositPopup').style.display = 'flex';
-        
         showToast(`✅ Deposit request submitted! ID: ${depositId}`);
-        
         setTimeout(() => {
           initializeDepositPage();
           document.getElementById('utrNumber').value = '';
@@ -2655,56 +2286,24 @@
       });
     }
 
-    // ===========================
-    // FIXED: WITHDRAWAL FUNCTIONS
-    // ===========================
     function processWithdrawal() {
       const amount = parseFloat(document.getElementById('withdrawalAmount').value);
       const upiId = document.getElementById('withdrawalDetails').value;
-      
-      if (!amount || amount < 100) {
-        showToast("Minimum withdrawal amount is ₹100");
-        return;
-      }
-
-      if (!upiId) {
-        showToast("Please enter UPI ID");
-        return;
-      }
-
-      if (!currentUser) {
-        showToast("Please login first");
-        return;
-      }
-
-      if (amount > currentUser.balance) {
-        showInsufficientBalance();
-        return;
-      }
-
+      if (!amount || amount < 100) { showToast("Minimum withdrawal amount is ₹100"); return; }
+      if (!upiId) { showToast("Please enter UPI ID"); return; }
+      if (!currentUser) { showToast("Please login first"); return; }
+      if (amount > currentUser.balance) { showInsufficientBalance(); return; }
       const withdrawalId = 'WD' + Date.now().toString().slice(-10);
       const withdrawalData = {
-        withdrawalId: withdrawalId,
-        userId: currentUser.userId,
-        phone: currentUser.phone,
-        amount: amount,
-        method: 'upi',
-        upiId: upiId,
-        status: 'pending',
-        timestamp: Date.now(),
-        date: new Date().toISOString()
+        withdrawalId: withdrawalId, userId: currentUser.userId, phone: currentUser.phone, amount: amount, method: 'upi', upiId: upiId, status: 'pending', timestamp: Date.now(), date: new Date().toISOString()
       };
-
       currentUser.balance -= amount;
       const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
-      
       database.ref('withdrawals/' + withdrawalId).set(withdrawalData);
       database.ref('users/' + cleanPhone + '/balance').set(currentUser.balance);
       localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
-      
-      showToast(`✅ Withdrawal request submitted! ID: ${withdrawalId}\nProcessing time: 15-30 minutes.`);
+      showToast(`✅ Withdrawal request submitted! ID: ${withdrawalId}`);
       updateUserInfo();
-      
       setTimeout(() => {
         document.getElementById('withdrawalAmount').value = '100';
         document.getElementById('withdrawalDetails').value = '';
@@ -2712,150 +2311,82 @@
       }, 2000);
     }
 
-    // ===========================
-    // NEW: DEPOSIT HISTORY
-    // ===========================
+    // History Functions
     function showDepositHistory() {
       document.querySelectorAll('main').forEach(el => el.classList.add('hidden'));
       document.getElementById('depositHistoryPage').style.display = 'block';
-      
       document.getElementById('bottomNav').classList.add('hide-nav');
       document.getElementById('page-title').textContent = 'Deposit History';
-      
       loadDepositHistory();
     }
     
     function loadDepositHistory() {
       if (!currentUser) return;
-      
       const container = document.getElementById('depositHistoryContainer');
       container.innerHTML = '<div style="text-align: center; color: var(--text-gray); padding: 20px;">Loading deposit history...</div>';
-      
       database.ref('deposits').orderByChild('userId').equalTo(currentUser.userId).once('value').then(snapshot => {
         const deposits = snapshot.val();
-        if (!deposits) {
-          container.innerHTML = '<div style="text-align: center; color: var(--text-gray); padding: 20px;">No deposit history found</div>';
-          return;
-        }
-        
+        if (!deposits) { container.innerHTML = '<div style="text-align: center; color: var(--text-gray); padding: 20px;">No deposit history found</div>'; return; }
         container.innerHTML = '';
         const depositArray = Object.values(deposits);
-        
         depositArray.sort((a, b) => b.timestamp - a.timestamp).forEach(deposit => {
           const historyCard = document.createElement('div');
           historyCard.className = 'history-card';
-          
-          const statusClass = deposit.status === 'completed' ? 'status-completed' : 
-                            deposit.status === 'rejected' ? 'status-rejected' : 'status-pending';
-          
-          const date = new Date(deposit.timestamp).toLocaleString();
-          
+          const statusClass = deposit.status === 'completed' ? 'status-completed' : deposit.status === 'rejected' ? 'status-rejected' : 'status-pending';
           historyCard.innerHTML = `
-            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-              <div style="font-weight: bold; color: var(--gold);">${deposit.depositId}</div>
-              <div class="${statusClass}">${deposit.status.toUpperCase()}</div>
-            </div>
-            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-              <div style="color: white;">Amount: ₹${deposit.amount}</div>
-              <div style="color: white;">UTR: ${deposit.utr || 'N/A'}</div>
-            </div>
-            <div style="font-size: 12px; color: var(--text-gray);">
-              ${date}
-            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;"><div style="font-weight: bold; color: var(--gold);">${deposit.depositId}</div><div class="${statusClass}">${deposit.status.toUpperCase()}</div></div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;"><div style="color: white;">Amount: ₹${deposit.amount}</div><div style="color: white;">UTR: ${deposit.utr || 'N/A'}</div></div>
+            <div style="font-size: 12px; color: var(--text-gray);">${new Date(deposit.timestamp).toLocaleString()}</div>
           `;
-          
           container.appendChild(historyCard);
         });
       });
     }
     
-    function goBackFromDepositHistory() {
-      switchTab('wallet');
-    }
+    function goBackFromDepositHistory() { switchTab('wallet'); }
 
-    // ===========================
-    // NEW: WITHDRAWAL HISTORY
-    // ===========================
     function showWithdrawalHistory() {
       document.querySelectorAll('main').forEach(el => el.classList.add('hidden'));
       document.getElementById('withdrawalHistoryPage').style.display = 'block';
-      
       document.getElementById('bottomNav').classList.add('hide-nav');
       document.getElementById('page-title').textContent = 'Withdrawal History';
-      
       loadWithdrawalHistory();
     }
     
     function loadWithdrawalHistory() {
       if (!currentUser) return;
-      
       const container = document.getElementById('withdrawalHistoryContainer');
       container.innerHTML = '<div style="text-align: center; color: var(--text-gray); padding: 20px;">Loading withdrawal history...</div>';
-      
       database.ref('withdrawals').orderByChild('userId').equalTo(currentUser.userId).once('value').then(snapshot => {
         const withdrawals = snapshot.val();
-        if (!withdrawals) {
-          container.innerHTML = '<div style="text-align: center; color: var(--text-gray); padding: 20px;">No withdrawal history found</div>';
-          return;
-        }
-        
+        if (!withdrawals) { container.innerHTML = '<div style="text-align: center; color: var(--text-gray); padding: 20px;">No withdrawal history found</div>'; return; }
         container.innerHTML = '';
         const withdrawalArray = Object.values(withdrawals);
-        
         withdrawalArray.sort((a, b) => b.timestamp - a.timestamp).forEach(withdrawal => {
           const historyCard = document.createElement('div');
           historyCard.className = 'history-card';
-          
-          const statusClass = withdrawal.status === 'completed' ? 'status-completed' : 
-                            withdrawal.status === 'rejected' ? 'status-rejected' : 'status-pending';
-          
-          const date = new Date(withdrawal.timestamp).toLocaleString();
-          
+          const statusClass = withdrawal.status === 'completed' ? 'status-completed' : withdrawal.status === 'rejected' ? 'status-rejected' : 'status-pending';
           historyCard.innerHTML = `
-            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-              <div style="font-weight: bold; color: var(--gold);">${withdrawal.withdrawalId}</div>
-              <div class="${statusClass}">${withdrawal.status.toUpperCase()}</div>
-            </div>
-            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-              <div style="color: white;">Amount: ₹${withdrawal.amount}</div>
-              <div style="color: white;">UPI: ${withdrawal.upiId || 'N/A'}</div>
-            </div>
-            <div style="font-size: 12px; color: var(--text-gray);">
-              ${date}
-            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;"><div style="font-weight: bold; color: var(--gold);">${withdrawal.withdrawalId}</div><div class="${statusClass}">${withdrawal.status.toUpperCase()}</div></div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;"><div style="color: white;">Amount: ₹${withdrawal.amount}</div><div style="color: white;">UPI: ${withdrawal.upiId || 'N/A'}</div></div>
+            <div style="font-size: 12px; color: var(--text-gray);">${new Date(withdrawal.timestamp).toLocaleString()}</div>
           `;
-          
           container.appendChild(historyCard);
         });
       });
     }
     
-    function goBackFromWithdrawalHistory() {
-      switchTab('wallet');
-    }
+    function goBackFromWithdrawalHistory() { switchTab('wallet'); }
 
-    // ===========================
-    // FIXED: HISTORY FUNCTIONS
-    // ===========================
     function listenToFirebaseResults() {
       database.ref('results').orderByChild('timestamp').limitToLast(100).on('value', (snapshot) => {
         allResults = [];
         snapshot.forEach((childSnapshot) => {
           const data = childSnapshot.val();
-          if (data && data.period && data.number !== undefined) {
-            allResults.push(data);
-          }
+          if (data && data.period && data.number !== undefined) allResults.push(data);
         });
-        
-        allResults.sort((a, b) => {
-          const periodA = a.period || '';
-          const periodB = b.period || '';
-          return periodB.localeCompare(periodA);
-        });
-        
-        if (isWingoPageActive) {
-          displayResultsForPage(currentPage);
-        }
+        allResults.sort((a, b) => (b.period || '').localeCompare(a.period || ''));
+        if (isWingoPageActive) displayResultsForPage(currentPage);
       });
     }
 
@@ -2863,24 +2394,17 @@
       const startIndex = (pageNum - 1) * RESULTS_PER_PAGE;
       const endIndex = startIndex + RESULTS_PER_PAGE;
       const pageResults = allResults.slice(startIndex, endIndex);
-      
       const tbody = document.getElementById('historyTableBody');
       if (!tbody) return;
-      
       tbody.innerHTML = '';
-      
       if (pageResults.length === 0) {
         tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; padding: 20px; color: var(--text-gray);">No results yet</td></tr>';
       } else {
         pageResults.forEach(result => {
           const row = document.createElement('tr');
-          
           const periodCell = document.createElement('td');
           periodCell.textContent = result.period ? result.period.slice(-4) : 'N/A';
-          periodCell.style.padding = '12px 8px';
-          periodCell.style.textAlign = 'center';
-          periodCell.style.borderBottom = '1px solid #333';
-          periodCell.style.color = 'white';
+          periodCell.style.padding = '12px 8px'; periodCell.style.textAlign = 'center'; periodCell.style.borderBottom = '1px solid #333'; periodCell.style.color = 'white';
           
           const numberCell = document.createElement('td');
           const numberSpan = document.createElement('span');
@@ -2889,139 +2413,75 @@
           else if ([1,3,7,9].includes(result.number)) numberSpan.style.background = 'linear-gradient(135deg, #10B981, #059669)';
           else if (result.number === 5) numberSpan.style.background = 'linear-gradient(45deg, #10B981, #8B5CF6)';
           else numberSpan.style.background = 'linear-gradient(135deg, #EF4444, #DC2626)';
-          numberSpan.style.color = 'white';
-          numberSpan.textContent = result.number;
+          numberSpan.style.color = 'white'; numberSpan.textContent = result.number;
           numberCell.appendChild(numberSpan);
-          numberCell.style.padding = '12px 8px';
-          numberCell.style.textAlign = 'center';
-          numberCell.style.borderBottom = '1px solid #333';
+          numberCell.style.padding = '12px 8px'; numberCell.style.textAlign = 'center'; numberCell.style.borderBottom = '1px solid #333';
           
           const sizeCell = document.createElement('td');
           sizeCell.textContent = (result.size || 'small').toUpperCase();
-          sizeCell.style.padding = '12px 8px';
-          sizeCell.style.textAlign = 'center';
-          sizeCell.style.borderBottom = '1px solid #333';
+          sizeCell.style.padding = '12px 8px'; sizeCell.style.textAlign = 'center'; sizeCell.style.borderBottom = '1px solid #333';
           sizeCell.style.color = result.size === 'big' ? '#F59E0B' : '#3B82F6';
           
           const colorCell = document.createElement('td');
-          colorCell.style.fontSize = '1.5rem';
-          colorCell.style.padding = '12px 8px';
-          colorCell.style.textAlign = 'center';
-          colorCell.style.borderBottom = '1px solid #333';
+          colorCell.style.fontSize = '1.5rem'; colorCell.style.padding = '12px 8px'; colorCell.style.textAlign = 'center'; colorCell.style.borderBottom = '1px solid #333';
           const colors = result.colors || ['red'];
-          const colorEmojis = colors.map(c => {
-            if (c === 'red') return '🔴';
-            if (c === 'green') return '🟢';
-            if (c === 'violet') return '🟣';
-            return '';
-          }).join(' ');
+          const colorEmojis = colors.map(c => { if (c === 'red') return '🔴'; if (c === 'green') return '🟢'; if (c === 'violet') return '🟣'; return ''; }).join(' ');
           colorCell.textContent = colorEmojis;
           
-          row.appendChild(periodCell);
-          row.appendChild(numberCell);
-          row.appendChild(sizeCell);
-          row.appendChild(colorCell);
+          row.appendChild(periodCell); row.appendChild(numberCell); row.appendChild(sizeCell); row.appendChild(colorCell);
           tbody.appendChild(row);
         });
       }
-      
       const totalPages = Math.ceil(allResults.length / RESULTS_PER_PAGE) || 1;
       document.getElementById('currentPageNum').textContent = pageNum;
       document.getElementById('totalPagesNum').textContent = totalPages;
-      
       document.getElementById('prevPageBtn').disabled = (pageNum === 1);
       document.getElementById('nextPageBtn').disabled = (pageNum >= totalPages);
     }
 
-    function previousPage() {
-      if (currentPage > 1) {
-        currentPage--;
-        displayResultsForPage(currentPage);
-      }
-    }
-
-    function nextPage() {
-      const totalPages = Math.ceil(allResults.length / RESULTS_PER_PAGE);
-      if (currentPage < totalPages) {
-        currentPage++;
-        displayResultsForPage(currentPage);
-      }
-    }
+    function previousPage() { if (currentPage > 1) { currentPage--; displayResultsForPage(currentPage); } }
+    function nextPage() { const totalPages = Math.ceil(allResults.length / RESULTS_PER_PAGE); if (currentPage < totalPages) { currentPage++; displayResultsForPage(currentPage); } }
 
     function showGameHistory() {
       document.querySelectorAll('.history-tab').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.history-tab')[0].classList.add('active');
-      currentPage = 1;
-      displayResultsForPage(currentPage);
+      currentPage = 1; displayResultsForPage(currentPage);
     }
 
     function showMyHistory() {
-      if (!currentUser) {
-        showToast("Please login to view your bet history");
-        return;
-      }
-      
+      if (!currentUser) { showToast("Please login to view your bet history"); return; }
       database.ref('user_bets/' + currentUser.userId).once('value').then(snapshot => {
         const bets = snapshot.val();
-        if (!bets) {
-          showToast("No bet history found");
-          return;
-        }
-        
+        if (!bets) { showToast("No bet history found"); return; }
         document.querySelectorAll('.history-tab').forEach(tab => tab.classList.remove('active'));
         document.querySelectorAll('.history-tab')[1].classList.add('active');
-        
         const tbody = document.getElementById('historyTableBody');
         if (!tbody) return;
-        
         tbody.innerHTML = '';
-        
         Object.entries(bets).sort((a, b) => b[1].timestamp - a[1].timestamp).slice(0, 20).forEach(([roundId, bet]) => {
           const row = document.createElement('tr');
-          
           const roundCell = document.createElement('td');
-          roundCell.textContent = roundId.slice(-4);
-          roundCell.style.padding = '12px 8px';
-          roundCell.style.textAlign = 'center';
-          roundCell.style.borderBottom = '1px solid #333';
-          roundCell.style.color = 'white';
+          roundCell.textContent = roundId.slice(-4); roundCell.style.padding = '12px 8px'; roundCell.style.textAlign = 'center'; roundCell.style.borderBottom = '1px solid #333'; roundCell.style.color = 'white';
           
           const betCell = document.createElement('td');
           betCell.textContent = typeof bet.selection === 'number' ? `${bet.selection}` : bet.selection.toUpperCase();
-          betCell.style.padding = '12px 8px';
-          betCell.style.textAlign = 'center';
-          betCell.style.borderBottom = '1px solid #333';
-          betCell.style.color = 'white';
+          betCell.style.padding = '12px 8px'; betCell.style.textAlign = 'center'; betCell.style.borderBottom = '1px solid #333'; betCell.style.color = 'white';
           
           const amountCell = document.createElement('td');
-          amountCell.textContent = `₹${bet.amount}`;
-          amountCell.style.padding = '12px 8px';
-          amountCell.style.textAlign = 'center';
-          amountCell.style.borderBottom = '1px solid #333';
-          amountCell.style.color = 'white';
+          amountCell.textContent = `₹${bet.amount}`; amountCell.style.padding = '12px 8px'; amountCell.style.textAlign = 'center'; amountCell.style.borderBottom = '1px solid #333'; amountCell.style.color = 'white';
           
           const statusCell = document.createElement('td');
           statusCell.textContent = bet.status === 'won' ? '✅' : bet.status === 'lost' ? '❌' : '⏳';
-          statusCell.style.padding = '12px 8px';
-          statusCell.style.textAlign = 'center';
-          statusCell.style.borderBottom = '1px solid #333';
-          statusCell.style.fontSize = '1.5rem';
+          statusCell.style.padding = '12px 8px'; statusCell.style.textAlign = 'center'; statusCell.style.borderBottom = '1px solid #333'; statusCell.style.fontSize = '1.5rem';
           
-          row.appendChild(roundCell);
-          row.appendChild(betCell);
-          row.appendChild(amountCell);
-          row.appendChild(statusCell);
+          row.appendChild(roundCell); row.appendChild(betCell); row.appendChild(amountCell); row.appendChild(statusCell);
           tbody.appendChild(row);
         });
       });
     }
 
-    // ===========================
-    // FIXED: UTILITY FUNCTIONS
-    // ===========================
     function refreshWingoBalance() {
       if (!currentUser) return;
-      
       const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
       database.ref('users/' + cleanPhone + '/balance').once('value').then(snapshot => {
         const balance = snapshot.val();
@@ -3034,33 +2494,20 @@
       });
     }
 
-    function refreshWalletBalance() {
-      refreshWingoBalance();
-    }
-
-    function showRegister() {
-      showToast("Just enter phone and password to auto-register!");
-    }
-
-    function showNotifications() {
-      showToast("No new notifications");
-    }
+    function refreshWalletBalance() { refreshWingoBalance(); }
+    function showNotifications() { showToast("No new notifications"); }
 
     function goBackToHome() {
       clearInterval(countdownInterval);
       clearInterval(betLockTimer);
-      if (pendingResultCheck) {
-        clearInterval(pendingResultCheck);
-        pendingResultCheck = null;
-      }
-      
-      isWingoPageActive = false; // Stop sound when leaving Wingo page
+      if (pendingResultCheck) { clearInterval(pendingResultCheck); pendingResultCheck = null; }
+      isWingoPageActive = false;
       document.getElementById('bottomNav').classList.remove('hide-nav');
       switchTab('home');
     }
 
     function showDepositPage() {
-      isWingoPageActive = false; // Stop sound
+      isWingoPageActive = false;
       document.querySelectorAll('main').forEach(el => el.classList.add('hidden'));
       document.getElementById('wingoPage').style.display = 'none';
       document.getElementById('depositPage').style.display = 'block';
@@ -3073,13 +2520,11 @@
         document.getElementById('depositPage').style.display = 'none';
         document.getElementById('wingoPage').style.display = 'block';
         isWingoPageActive = true;
-      } else {
-        switchTab('wallet');
-      }
+      } else { switchTab('wallet'); }
     }
 
     function showWithdrawalPage() {
-      isWingoPageActive = false; // Stop sound
+      isWingoPageActive = false;
       document.querySelectorAll('main').forEach(el => el.classList.add('hidden'));
       document.getElementById('wingoPage').style.display = 'none';
       document.getElementById('withdrawalPage').style.display = 'block';
@@ -3091,18 +2536,14 @@
         document.getElementById('withdrawalPage').style.display = 'none';
         document.getElementById('wingoPage').style.display = 'block';
         isWingoPageActive = true;
-      } else {
-        switchTab('wallet');
-      }
+      } else { switchTab('wallet'); }
     }
 
     function checkPendingBets() {
       if (!currentUser) return;
-      
       database.ref('user_bets/' + currentUser.userId).once('value').then(snapshot => {
         const userBets = snapshot.val();
         if (!userBets) return;
-        
         Object.entries(userBets).forEach(([roundId, betData]) => {
           if (betData.status === 'pending') {
             database.ref('results/' + roundId).once('value').then(resultSnapshot => {
@@ -3116,26 +2557,8 @@
       });
     }
 
-    function startResultCheck() {
-      if (pendingResultCheck) {
-        clearInterval(pendingResultCheck);
-      }
-      
-      pendingResultCheck = setInterval(() => {
-        database.ref('results/' + currentRoundId).once('value').then(snapshot => {
-          if (snapshot.exists()) {
-            const result = snapshot.val();
-            checkUserBetsForRound(currentRoundId, result);
-            clearInterval(pendingResultCheck);
-            pendingResultCheck = null;
-          }
-        });
-      }, 1000);
-    }
-
     function checkUserBetsForRound(roundId, result) {
       if (!currentUser) return;
-      
       database.ref('user_bets/' + currentUser.userId + '/' + roundId).once('value').then(snapshot => {
         if (snapshot.exists()) {
           const betData = snapshot.val();
@@ -3148,43 +2571,25 @@
 
     function loadMyBets() {
       if (!currentUser) return;
-      
       const container = document.getElementById('myBetsContainer');
       container.innerHTML = '<div style="text-align: center; color: var(--text-gray); padding: 20px;">Loading your bets...</div>';
-      
       database.ref('user_bets/' + currentUser.userId).once('value').then(snapshot => {
         const bets = snapshot.val();
-        if (!bets) {
-          container.innerHTML = '<div style="text-align: center; color: var(--text-gray); padding: 20px;">No bets yet</div>';
-          return;
-        }
-        
+        if (!bets) { container.innerHTML = '<div style="text-align: center; color: var(--text-gray); padding: 20px;">No bets yet</div>'; return; }
         container.innerHTML = '';
         const betArray = Object.entries(bets);
-        
         betArray.sort((a, b) => b[1].timestamp - a[1].timestamp).forEach(([roundId, bet]) => {
           const betDiv = document.createElement('div');
           betDiv.style = 'background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; margin-bottom: 10px; border-left: 4px solid ' + (bet.status === 'won' ? '#10B981' : bet.status === 'lost' ? '#EF4444' : '#F59E0B') + ';';
-          
           const selectionText = typeof bet.selection === 'number' ? `Number ${bet.selection}` : bet.selection.toUpperCase();
           const statusText = bet.status === 'won' ? 'WON' : bet.status === 'lost' ? 'LOST' : 'PENDING';
           const statusColor = bet.status === 'won' ? '#10B981' : bet.status === 'lost' ? '#EF4444' : '#F59E0B';
-          
           betDiv.innerHTML = `
-            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-              <div style="font-weight: bold; color: var(--gold);">Round: ${roundId.slice(-4)}</div>
-              <div style="font-weight: bold; color: ${statusColor};">${statusText}</div>
-            </div>
-            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-              <div style="color: white;">${selectionText}</div>
-              <div style="color: white;">₹${bet.amount}</div>
-            </div>
-            <div style="font-size: 12px; color: var(--text-gray);">
-              ${new Date(bet.timestamp).toLocaleString()}
-            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;"><div style="font-weight: bold; color: var(--gold);">Round: ${roundId.slice(-4)}</div><div style="font-weight: bold; color: ${statusColor};">${statusText}</div></div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;"><div style="color: white;">${selectionText}</div><div style="color: white;">₹${bet.amount}</div></div>
+            <div style="font-size: 12px; color: var(--text-gray);">${new Date(bet.timestamp).toLocaleString()}</div>
             ${bet.status === 'won' ? `<div style="color: #10B981; font-weight: bold; margin-top: 5px;">Won: ₹${(bet.amount * (typeof bet.selection === 'number' ? 9.0 : bet.selection === 'violet' ? 4.0 : 1.98)).toFixed(2)}</div>` : ''}
           `;
-          
           container.appendChild(betDiv);
         });
       });
@@ -3196,6 +2601,7 @@
         localStorage.removeItem('glowbet_user');
         document.getElementById("mainApp").classList.add("hidden");
         document.getElementById("loginPage").classList.remove("hidden");
+        document.getElementById("registerPage").classList.add("hidden");
         clearInterval(countdownInterval);
         clearInterval(betLockTimer);
         isWingoPageActive = false;
@@ -3203,33 +2609,14 @@
       }
     }
 
-    // ===========================
-    // BETTING FUNCTIONS
-    // ===========================
     function selectBet(selection) {
-      if (isBettingLocked) {
-        showToast("Betting is locked for last 5 seconds!");
-        return;
-      }
-      
-      if (!currentUser) {
-        showToast("Please login to place bets");
-        return;
-      }
-      
-      currentBet = {
-        selection: selection,
-        amount: betAmount,
-        roundId: currentRoundId,
-        timestamp: Date.now(),
-        status: 'pending'
-      };
-      
+      if (isBettingLocked) { showToast("Betting is locked for last 5 seconds!"); return; }
+      if (!currentUser) { showToast("Please login to place bets"); return; }
+      currentBet = { selection: selection, amount: betAmount, roundId: currentRoundId, timestamp: Date.now(), status: 'pending' };
       const betSelection = document.getElementById('betSelection');
       if (typeof selection === 'number') {
         betSelection.textContent = `Number ${selection}`;
-        betSelection.style.color = getColorForNumber(selection).includes('red') ? '#EF4444' : 
-                                  getColorForNumber(selection).includes('green') ? '#10B981' : '#8B5CF6';
+        betSelection.style.color = getColorForNumber(selection).includes('red') ? '#EF4444' : getColorForNumber(selection).includes('green') ? '#10B981' : '#8B5CF6';
       } else {
         betSelection.textContent = selection.toUpperCase();
         if (selection === 'red') betSelection.style.color = '#EF4444';
@@ -3238,76 +2625,74 @@
         else if (selection === 'big') betSelection.style.color = '#F59E0B';
         else if (selection === 'small') betSelection.style.color = '#3B82F6';
       }
-      
       document.getElementById('betAmount').textContent = betAmount;
       document.getElementById('betAmountDisplay').textContent = `₹${betAmount}`;
       document.getElementById('betPopup').style.display = 'flex';
     }
 
     function placeBet() {
-      if (!currentUser) {
-        showToast("Please login to place bets");
-        return;
-      }
-      
-      if (currentBet.amount > currentUser.balance) {
-        showInsufficientBalance();
-        closeBetPopup();
-        return;
-      }
+      if (!currentUser) { showToast("Please login to place bets"); return; }
+      if (currentBet.amount > currentUser.balance) { showInsufficientBalance(); closeBetPopup(); return; }
       
       currentUser.balance -= currentBet.amount;
       const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
-      
       database.ref('users/' + cleanPhone + '/balance').set(currentUser.balance);
       localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
       
-      const betData = {
-        ...currentBet,
-        userId: currentUser.userId,
-        phone: currentUser.phone
-      };
-      
+      const betData = { ...currentBet, userId: currentUser.userId, phone: currentUser.phone };
       database.ref('user_bets/' + currentUser.userId + '/' + currentBet.roundId).set(betData);
       
       showToast(`✅ Bet placed! ₹${currentBet.amount} on ${typeof currentBet.selection === 'number' ? 'Number ' + currentBet.selection : currentBet.selection.toUpperCase()}`);
       updateUserInfo();
-      
       closeBetPopup();
-      startResultCheck();
     }
 
-    // ===========================
-    // ADMIN CONTROL FUNCTIONALITY
-    // ===========================
-    function adminControlResult(number) {
-      if (!confirm("Are you sure you want to force this result?")) return;
-      
-      const adminControl = {
-        active: true,
-        number: number,
-        timestamp: Date.now(),
-        controlledBy: currentUser?.userId || 'admin'
-      };
-      
-      database.ref('admin_control').set(adminControl).then(() => {
-        showToast(`✅ Admin control activated! Next result will be: ${number}`);
-        
-        // Auto-disable after 1 minute
-        setTimeout(() => {
-          database.ref('admin_control').remove();
-          showToast("Admin control deactivated");
-        }, 60000);
-      });
+    function processBetResult(bet, result, roundId) {
+      let won = false;
+      let winAmount = 0;
+
+      if (typeof bet.selection === 'number') {
+        won = (bet.selection === result.number);
+        winAmount = won ? bet.amount * 9.0 : 0;
+      } else if (bet.selection === 'red') {
+        won = result.colors.includes('red');
+        winAmount = won ? bet.amount * 1.98 : 0;
+      } else if (bet.selection === 'green') {
+        won = result.colors.includes('green');
+        winAmount = won ? bet.amount * 1.98 : 0;
+      } else if (bet.selection === 'violet') {
+        won = result.colors.includes('violet');
+        winAmount = won ? bet.amount * 4.0 : 0;
+      } else if (bet.selection === 'big') {
+        won = (result.size === 'big');
+        winAmount = won ? bet.amount * 1.98 : 0;
+      } else if (bet.selection === 'small') {
+        won = (result.size === 'small');
+        winAmount = won ? bet.amount * 1.98 : 0;
+      }
+
+      if (won) {
+        const cleanPhone = currentUser.phone.replace(/[^0-9]/g, '');
+        database.ref('users/' + cleanPhone).once('value').then(snapshot => {
+          const userData = snapshot.val();
+          const newBalance = (userData.balance || 0) + winAmount;
+          database.ref('users/' + cleanPhone + '/balance').set(newBalance).then(() => {
+            currentUser.balance = newBalance;
+            localStorage.setItem('glowbet_user', JSON.stringify(currentUser));
+            database.ref('user_bets/' + currentUser.userId + '/' + roundId + '/status').set('won');
+            updateUserInfo();
+            showWinPopup(winAmount);
+            showToast(`🎉 Congratulations! You won ₹${winAmount.toFixed(2)}!`);
+          });
+        });
+      } else {
+        database.ref('user_bets/' + currentUser.userId + '/' + roundId + '/status').set('lost');
+        showLosePopup(bet.amount);
+      }
     }
 
-    // ===========================
-    // Initialize when page loads
-    // ===========================
     document.addEventListener('DOMContentLoaded', function() {
       checkAutoLogin();
-      
-      // Add admin message listener
       database.ref('admin_message').on('value', snapshot => {
         const message = snapshot.val();
         if (message && message.text && currentUser) {
