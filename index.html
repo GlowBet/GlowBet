@@ -474,7 +474,7 @@
       text-align: center;
       flex: 1;
       transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       border: none;
       animation: bounceIn 1s ease;
     }
@@ -2078,15 +2078,15 @@
           name: name,
           phone: phone,
           password: password,
-          balance: 28,
+          balance: 28, // ✅ सिर्फ ₹28 का बोनस
           userId: userId,
           status: 'active',
-          registeredDate: new Date().toISOString(),
-          inviteCode: '663221064676'
+          registeredDate: new Date().toISOString()
+          // ❌ कोई inviteCode नहीं
         };
         
         database.ref('users/' + cleanPhone).set(newUser).then(() => {
-          showToast("Registration Successful! Please Login.");
+          showToast("Registration Successful! ₹28 bonus added. Please Login.");
           showLoginPage();
         }).catch(error => {
           console.error("Registration error:", error);
